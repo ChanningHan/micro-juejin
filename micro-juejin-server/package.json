@@ -1,0 +1,13 @@
+{
+  "dependencies": {
+    "koa": "^2.13.0",
+    "koa-bodyparser": "^4.3.0",
+    "koa-router": "^9.4.0",
+    "koa2-cors": "^2.0.6",
+    "mockjs": "^1.1.0"
+  },
+  "scripts": {
+    "start": "nodemon app.js"
+  },
+  "name": "micro-juejin-server"
+}
