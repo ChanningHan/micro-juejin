@@ -1,40 +1,59 @@
 <template>
-  <a-layout id="components-layout-demo-top" class="BasicLayout_container">
+  <a-layout class="BasicLayout_container">
     <transition name="head_fade">
       <a-layout-header class="BasicLayout_header" v-show="showHeader">
         <transition name="menu_fade" mode="out-in">
-          <div v-if="!isCollapsed" key="0">
+          <div v-if="!isCollapsed" key="0" class="header_menu-wrapper">
+            <img
+              class="header_menu-img"
+              src="https://s3.pstatp.com/toutiao/xitu_juejin_web/img/logo.a7995ad.svg"
+              alt="LOGO"
+            />
             <a-menu
               theme="light"
               mode="horizontal"
               :selectedKeys="[activeRule]"
-              class="BasicLayout_header-menu"
+              class="header_menu"
             >
               <a-menu-item
                 v-for="app in apps"
                 :key="app.activeRule"
                 @click="handleRouterLink(app.activeRule)"
               >
-                <span>{{ app.$meta.title }}</span>
+                <span class="header_menu-title">{{ app.$meta.title }}</span>
               </a-menu-item>
             </a-menu>
           </div>
 
-          <a-dropdown v-else key="1">
-            <a class="ant-dropdown-link" @click="e => e.preventDefault()">
-              {{ currentTitle }} <a-icon type="down" />
-            </a>
-            <a-menu slot="overlay" selectable :selectedKeys="[activeRule]">
-              <a-menu-item
-                v-for="app in apps"
-                :key="app.activeRule"
-                @click="handleRouterLink(app.activeRule)"
-              >
-                <span>{{ app.$meta.title }}</span>
-              </a-menu-item>
-            </a-menu>
-          </a-dropdown>
+          <div class="header_menu-wrapper" v-else key="1">
+            <img
+              class="header_menu-img"
+              src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiIHN0YW5kYWxvbmU9Im5vIj8+Cjxzdmcgd2lkdGg9IjQ1cHgiIGhlaWdodD0iMzhweCIgdmlld0JveD0iMCAwIDQ1IDM4IiB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiPgogICAgPHRpdGxlPkp1ZWppbjwvdGl0bGU+CiAgICA8ZGVzYz5KdWVqaW4uaW08L2Rlc2M+CiAgICA8ZGVmcz48L2RlZnM+CiAgICA8ZyBpZD0iMC4xIiBzdHJva2U9Im5vbmUiIHN0cm9rZS13aWR0aD0iMSIgZmlsbD0ibm9uZSIgZmlsbC1ydWxlPSJldmVub2RkIj4KICAgICAgICA8ZyBpZD0iR3JvdXAtMTQiIHRyYW5zZm9ybT0idHJhbnNsYXRlKDEuMDAwMDAwLCA1LjAwMDAwMCkiIGZpbGw9IiMwMDZDRkYiPgogICAgICAgICAgICA8cGF0aCBkPSJNMjEuMjkzNDMyOCwyLjU4MzEzMDQ5IEwxOC4wMTczOTg0LDAgTDE0LjU5NDYyNCwyLjY5ODg3ODAxIEwxNC40MTcyMDc3LDIuODQxODIzMDQgTDE4LjAxNzM5ODQsNS43MTI0MjQ4MyBMMjEuNjI4NjU3OCwyLjg0MTgyMzA0IEwyMS4yOTM0MzI4LDIuNTgzMTMwNDkgWiBNMzMuNzA3ODI4OSwxMi42MDA2Njc0IEwxOC4wMDc5MTA5LDI0Ljk4MDI3NiBMMi4zMTc0ODA0NCwxMi42MDgyNTc0IEwwLDE0LjQ2OTcwNTIgTDE4LjAwNzkxMDksMjguNjY5MDE2NyBMMzYuMDI1NjI1NiwxNC40NjIxMTUyIEwzMy43MDc4Mjg5LDEyLjYwMDY2NzQgWiBNMTguMDA3OTEwOSwxMy42MDUwNzc2IEw5LjQ2NDQxNTU0LDYuODY4NjM1MDUgTDcuMTQ2NjE4ODUsOC43MzAwODI5IEwxOC4wMDc5MTA5LDE3LjI5NDEzNDUgTDI4Ljg3ODM3NDIsOC43MjI0OTI5IEwyNi41NjA1Nzc1LDYuODYxMDQ1MDUgTDE4LjAwNzkxMDksMTMuNjA1MDc3NiBaIiBpZD0iRmlsbC0xLUNvcHkiPjwvcGF0aD4KICAgICAgICA8L2c+CiAgICA8L2c+Cjwvc3ZnPg=="
+              alt="LOGO"
+            />
+            <a-dropdown>
+              <a class="header_menu-title" @click="e => e.preventDefault()">
+                {{ currentTitle }} <a-icon type="down" />
+              </a>
+              <a-menu slot="overlay" selectable :selectedKeys="[activeRule]">
+                <a-menu-item
+                  v-for="app in apps"
+                  :key="app.activeRule"
+                  @click="handleRouterLink(app.activeRule)"
+                >
+                  <span>{{ app.$meta.title }}</span>
+                </a-menu-item>
+              </a-menu>
+            </a-dropdown>
+          </div>
         </transition>
+
+        <div class="header_right-wrapper">
+          <SearchInput :isCollapsed="isCollapsed"></SearchInput>
+          <WriteButton :isCollapsed="isCollapsed"></WriteButton>
+          <BellBadge></BellBadge>
+          <UserAvatar></UserAvatar>
+        </div>
       </a-layout-header>
     </transition>
 
@@ -59,15 +78,25 @@
 <script>
 import apps from "@/shared/microApps";
 import { debounce, throttle } from "@/shared/util";
+import SearchInput from "./BasicLayout/SearchInput";
+import WriteButton from "@layouts/BasicLayout/WriteButton";
+import BellBadge from "@layouts/BasicLayout/BellBadge";
+import UserAvatar from "@layouts/BasicLayout/UserAvatar";
 
 export default {
+  components: {
+    SearchInput,
+    WriteButton,
+    BellBadge,
+    UserAvatar
+  },
   data() {
     return {
       apps,
       activeRule: void 0,
       ruleMap: new Map(),
       screenWidth: document.body.clientWidth,
-      isCollapsed: false,
+      // isCollapsed: false,
       scrollTop: 0,
       showHeader: true,
       switchingApp: false
@@ -78,6 +107,9 @@ export default {
       return this.activeRule
         ? this.ruleMap.get(this.activeRule)
         : apps[0].$meta.title;
+    },
+    isCollapsed() {
+      return this.screenWidth < 1000;
     }
   },
   methods: {
@@ -106,9 +138,6 @@ export default {
     $route(newVal) {
       this.activeRule = "/" + newVal.path.split("/")[1];
     },
-    screenWidth(newVal) {
-      this.isCollapsed = newVal < 800;
-    },
     scrollTop: debounce(
       function(newVal, oldVal) {
         this.showHeader = newVal - oldVal <= 0;
@@ -118,18 +147,24 @@ export default {
     )
   },
   mounted() {
-    this.isCollapsed = this.screenWidth < 800;
     window.onresize = throttle(
       () => {
         this.screenWidth = document.body.clientWidth;
       },
-      800,
+      500,
       false
     );
   }
 };
 </script>
-<style></style>
+<style>
+.menu_fade-enter,
+.menu_fade-leave-to {
+  opacity: 0;
+  //transform: translate3d(0px, -0px, 100px);
+  transform: perspective(500px) translateZ(100px);
+}
+</style>
 <style lang="scss" scoped>
 .BasicLayout_container {
   //background: #42b983;
@@ -140,11 +175,30 @@ export default {
     box-shadow: 0px 3px 3px rgba(0, 0, 0, 0.15);
     display: flex;
     justify-content: center;
+    align-items: center;
     position: fixed;
     width: 100%;
     transform-origin: top;
-    .BasicLayout_header-menu {
-      line-height: 64px;
+    .header_menu-wrapper {
+      min-width: 130px;
+      display: flex;
+      .header_menu {
+        line-height: 64px;
+      }
+      .header_menu-img {
+        cursor: pointer;
+        margin-right: 12px;
+      }
+    }
+    .header_menu-title {
+      font-size: 16px;
+    }
+    .header_right-wrapper {
+      display: flex;
+      justify-content: space-evenly;
+      align-items: center;
+      width: 500px;
+      //background: #3a50d6;
     }
   }
 
@@ -163,12 +217,6 @@ export default {
 }
 
 /*transition相关*/
-.menu_fade-enter,
-.menu_fade-leave-to {
-  opacity: 0;
-  //transform: translate3d(0px, -0px, 100px);
-  transform: perspective(500px) translateZ(100px);
-}
 
 .head_fade-enter,
 .head_fade-leave-to {

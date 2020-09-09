@@ -24,7 +24,8 @@ import {
   Tooltip,
   Layout,
   Menu,
-  Dropdown
+  Dropdown,
+  Input
 } from "ant-design-vue";
 //
 Vue.prototype.$notification = notification;
@@ -41,7 +42,8 @@ const components = [
   Tooltip,
   Layout,
   Menu,
-  Dropdown
+  Dropdown,
+  Input
 ];
 register(components);
 
