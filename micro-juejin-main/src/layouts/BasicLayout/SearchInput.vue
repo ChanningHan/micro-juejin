@@ -7,7 +7,9 @@
     @blur="handleBlur"
     class="SearchInput_wrapper"
     :style="{
-      width: isCollapsed ? '115px' : '200px',
+      // width: isCollapsed ? '115px' : '200px',
+      minWidth: '115px',
+      flex: 1,
       transition: 'width 0.5s'
     }"
     :enterButton="false"

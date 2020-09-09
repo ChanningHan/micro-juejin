@@ -3,71 +3,61 @@
     <transition name="head_fade">
       <a-layout-header class="BasicLayout_header" v-show="showHeader">
         <div class="BasicLayout_header_container">
-          <div key="header_menu-wrapper">
-            <transition
-              name="menu_fade"
-              mode="out-in"
-              style="display: inline-block"
-            >
-              <div v-if="!isCollapsed" key="0" class="header_menu-wrapper">
-                <img
-                  class="header_menu-img"
-                  src="https://s3.pstatp.com/toutiao/xitu_juejin_web/img/logo.a7995ad.svg"
-                  alt="LOGO"
-                />
-                <a-menu
-                  theme="light"
-                  mode="horizontal"
-                  :selectedKeys="[activeRule]"
-                  class="header_menu"
+          <transition
+            name="menu_fade"
+            mode="out-in"
+            style="display: inline-block"
+          >
+            <div v-if="!isCollapsed" key="0" class="header_menu-wrapper">
+              <img
+                class="header_menu-img"
+                src="https://s3.pstatp.com/toutiao/xitu_juejin_web/img/logo.a7995ad.svg"
+                alt="LOGO"
+              />
+              <a-menu
+                theme="light"
+                mode="horizontal"
+                :selectedKeys="[activeRule]"
+                class="header_menu"
+              >
+                <a-menu-item
+                  v-for="app in apps"
+                  :key="app.activeRule"
+                  @click="handleRouterLink(app.activeRule)"
                 >
+                  <span class="header_menu-title">{{ app.$meta.title }}</span>
+                </a-menu-item>
+              </a-menu>
+            </div>
+
+            <div class="header_menu-wrapper" v-else key="1">
+              <img
+                class="header_menu-img"
+                src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiIHN0YW5kYWxvbmU9Im5vIj8+Cjxzdmcgd2lkdGg9IjQ1cHgiIGhlaWdodD0iMzhweCIgdmlld0JveD0iMCAwIDQ1IDM4IiB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiPgogICAgPHRpdGxlPkp1ZWppbjwvdGl0bGU+CiAgICA8ZGVzYz5KdWVqaW4uaW08L2Rlc2M+CiAgICA8ZGVmcz48L2RlZnM+CiAgICA8ZyBpZD0iMC4xIiBzdHJva2U9Im5vbmUiIHN0cm9rZS13aWR0aD0iMSIgZmlsbD0ibm9uZSIgZmlsbC1ydWxlPSJldmVub2RkIj4KICAgICAgICA8ZyBpZD0iR3JvdXAtMTQiIHRyYW5zZm9ybT0idHJhbnNsYXRlKDEuMDAwMDAwLCA1LjAwMDAwMCkiIGZpbGw9IiMwMDZDRkYiPgogICAgICAgICAgICA8cGF0aCBkPSJNMjEuMjkzNDMyOCwyLjU4MzEzMDQ5IEwxOC4wMTczOTg0LDAgTDE0LjU5NDYyNCwyLjY5ODg3ODAxIEwxNC40MTcyMDc3LDIuODQxODIzMDQgTDE4LjAxNzM5ODQsNS43MTI0MjQ4MyBMMjEuNjI4NjU3OCwyLjg0MTgyMzA0IEwyMS4yOTM0MzI4LDIuNTgzMTMwNDkgWiBNMzMuNzA3ODI4OSwxMi42MDA2Njc0IEwxOC4wMDc5MTA5LDI0Ljk4MDI3NiBMMi4zMTc0ODA0NCwxMi42MDgyNTc0IEwwLDE0LjQ2OTcwNTIgTDE4LjAwNzkxMDksMjguNjY5MDE2NyBMMzYuMDI1NjI1NiwxNC40NjIxMTUyIEwzMy43MDc4Mjg5LDEyLjYwMDY2NzQgWiBNMTguMDA3OTEwOSwxMy42MDUwNzc2IEw5LjQ2NDQxNTU0LDYuODY4NjM1MDUgTDcuMTQ2NjE4ODUsOC43MzAwODI5IEwxOC4wMDc5MTA5LDE3LjI5NDEzNDUgTDI4Ljg3ODM3NDIsOC43MjI0OTI5IEwyNi41NjA1Nzc1LDYuODYxMDQ1MDUgTDE4LjAwNzkxMDksMTMuNjA1MDc3NiBaIiBpZD0iRmlsbC0xLUNvcHkiPjwvcGF0aD4KICAgICAgICA8L2c+CiAgICA8L2c+Cjwvc3ZnPg=="
+                alt="LOGO"
+              />
+              <a-dropdown>
+                <a class="header_menu-title" @click="e => e.preventDefault()">
+                  {{ currentTitle }} <a-icon type="down" />
+                </a>
+                <a-menu slot="overlay" selectable :selectedKeys="[activeRule]">
                   <a-menu-item
                     v-for="app in apps"
                     :key="app.activeRule"
                     @click="handleRouterLink(app.activeRule)"
                   >
-                    <span class="header_menu-title">{{ app.$meta.title }}</span>
+                    <span>{{ app.$meta.title }}</span>
                   </a-menu-item>
                 </a-menu>
-              </div>
+              </a-dropdown>
+            </div>
+          </transition>
 
-              <div class="header_menu-wrapper" v-else key="1">
-                <img
-                  class="header_menu-img"
-                  src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiIHN0YW5kYWxvbmU9Im5vIj8+Cjxzdmcgd2lkdGg9IjQ1cHgiIGhlaWdodD0iMzhweCIgdmlld0JveD0iMCAwIDQ1IDM4IiB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiPgogICAgPHRpdGxlPkp1ZWppbjwvdGl0bGU+CiAgICA8ZGVzYz5KdWVqaW4uaW08L2Rlc2M+CiAgICA8ZGVmcz48L2RlZnM+CiAgICA8ZyBpZD0iMC4xIiBzdHJva2U9Im5vbmUiIHN0cm9rZS13aWR0aD0iMSIgZmlsbD0ibm9uZSIgZmlsbC1ydWxlPSJldmVub2RkIj4KICAgICAgICA8ZyBpZD0iR3JvdXAtMTQiIHRyYW5zZm9ybT0idHJhbnNsYXRlKDEuMDAwMDAwLCA1LjAwMDAwMCkiIGZpbGw9IiMwMDZDRkYiPgogICAgICAgICAgICA8cGF0aCBkPSJNMjEuMjkzNDMyOCwyLjU4MzEzMDQ5IEwxOC4wMTczOTg0LDAgTDE0LjU5NDYyNCwyLjY5ODg3ODAxIEwxNC40MTcyMDc3LDIuODQxODIzMDQgTDE4LjAxNzM5ODQsNS43MTI0MjQ4MyBMMjEuNjI4NjU3OCwyLjg0MTgyMzA0IEwyMS4yOTM0MzI4LDIuNTgzMTMwNDkgWiBNMzMuNzA3ODI4OSwxMi42MDA2Njc0IEwxOC4wMDc5MTA5LDI0Ljk4MDI3NiBMMi4zMTc0ODA0NCwxMi42MDgyNTc0IEwwLDE0LjQ2OTcwNTIgTDE4LjAwNzkxMDksMjguNjY5MDE2NyBMMzYuMDI1NjI1NiwxNC40NjIxMTUyIEwzMy43MDc4Mjg5LDEyLjYwMDY2NzQgWiBNMTguMDA3OTEwOSwxMy42MDUwNzc2IEw5LjQ2NDQxNTU0LDYuODY4NjM1MDUgTDcuMTQ2NjE4ODUsOC43MzAwODI5IEwxOC4wMDc5MTA5LDE3LjI5NDEzNDUgTDI4Ljg3ODM3NDIsOC43MjI0OTI5IEwyNi41NjA1Nzc1LDYuODYxMDQ1MDUgTDE4LjAwNzkxMDksMTMuNjA1MDc3NiBaIiBpZD0iRmlsbC0xLUNvcHkiPjwvcGF0aD4KICAgICAgICA8L2c+CiAgICA8L2c+Cjwvc3ZnPg=="
-                  alt="LOGO"
-                />
-                <a-dropdown>
-                  <a class="header_menu-title" @click="e => e.preventDefault()">
-                    {{ currentTitle }} <a-icon type="down" />
-                  </a>
-                  <a-menu
-                    slot="overlay"
-                    selectable
-                    :selectedKeys="[activeRule]"
-                  >
-                    <a-menu-item
-                      v-for="app in apps"
-                      :key="app.activeRule"
-                      @click="handleRouterLink(app.activeRule)"
-                    >
-                      <span>{{ app.$meta.title }}</span>
-                    </a-menu-item>
-                  </a-menu>
-                </a-dropdown>
-              </div>
-            </transition>
-          </div>
-
-          <div class="header_right-wrapper" key="header_right-wrapper">
-            <FLIPWrapper
-              style="display: flex;align-items: center;flex-wrap: nowrap"
-            >
-              <SearchInput :isCollapsed="isCollapsed" key="0"></SearchInput>
-              <WriteButton :isCollapsed="isCollapsed" key="1"></WriteButton>
-              <BellBadge key="2"></BellBadge>
-              <UserAvatar key="3"></UserAvatar>
-            </FLIPWrapper>
+          <div class="header_right-wrapper">
+            <SearchInput :isCollapsed="isCollapsed"></SearchInput>
+            <WriteButton :isCollapsed="isCollapsed"></WriteButton>
+            <BellBadge></BellBadge>
+            <UserAvatar></UserAvatar>
           </div>
         </div>
       </a-layout-header>
@@ -106,7 +96,6 @@ import WriteButton from "@layouts/BasicLayout/WriteButton";
 import BellBadge from "@layouts/BasicLayout/BellBadge";
 import UserAvatar from "@layouts/BasicLayout/UserAvatar";
 import HomeNavBar from "@layouts/BasicLayout/HomeNavBar";
-import FLIPWrapper from "@comp/common/FLIPWrapper";
 
 export default {
   components: {
@@ -114,8 +103,7 @@ export default {
     WriteButton,
     BellBadge,
     UserAvatar,
-    HomeNavBar,
-    FLIPWrapper
+    HomeNavBar
   },
   data() {
     return {
