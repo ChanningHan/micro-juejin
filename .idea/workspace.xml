@@ -16,6 +16,7 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.standard" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -24,6 +25,11 @@
     <property name="node.js.selected.package.standard" value="" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="settings.javascript.linters.eslint" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\DM\WebstormProjects\PERSONNAL\micro-juejin" />
+    </key>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -34,7 +40,7 @@
       <option name="presentableId" value="Default" />
       <updated>1599574988566</updated>
       <workItem from="1599574989810" duration="698000" />
-      <workItem from="1599614731981" duration="12770000" />
+      <workItem from="1599614731981" duration="15878000" />
     </task>
     <servers />
   </component>
@@ -46,6 +52,10 @@
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state x="576" y="171" key="SettingsEditor/0.0.2560.1400/-1080.-101.1080.1880@0.0.2560.1400" timestamp="1599617950291" />
+    <state width="765" height="596" key="SwitcherDM" timestamp="1599634947558">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state width="765" height="596" key="SwitcherDM/0.0.2560.1400/-1080.-101.1080.1880@0.0.2560.1400" timestamp="1599634947558" />
     <state x="777" y="118" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1599619473700">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>

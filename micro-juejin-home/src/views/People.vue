@@ -1,5 +1,5 @@
 <template>
-  <div class="about">
+  <div class="about" style="background: #42b983;">
     <h1>This is a people page</h1>
     <PeopleList></PeopleList>
   </div>

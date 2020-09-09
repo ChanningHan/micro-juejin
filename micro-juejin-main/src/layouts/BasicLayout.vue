@@ -168,7 +168,7 @@ export default {
 <style lang="scss" scoped>
 .BasicLayout_container {
   //background: #42b983;
-  height: 100vh;
+  min-height: 100vh;
 
   .BasicLayout_header {
     background: #fff;
@@ -203,16 +203,19 @@ export default {
   }
 
   .BasicLayout_content {
-    padding: 64px 16px 16px;
+    padding: 64px 0px 0px;
     overflow: auto;
     text-align: center;
     #subApp {
-      display: inline-block;
+      width: 100%;
+      display: flex;
+      justify-content: center;
     }
   }
 
   .BasicLayout_footer {
     text-align: center;
+    background: #7c6fee;
   }
 }
 
