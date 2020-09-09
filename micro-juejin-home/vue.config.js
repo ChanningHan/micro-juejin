@@ -19,6 +19,48 @@ module.exports = {
   productionSourceMap: false,
   runtimeCompiler: false,
 
+  /*引入scss全局变量*/
+  pluginOptions: {
+    "style-resources-loader": {
+      preProcessor: "scss",
+      patterns: [path.resolve(__dirname, "./src/shared/variables.scss")]
+    }
+  },
+
+  css: {
+    loaderOptions: {
+      // 给 sass-loader 传递选项
+      sass: {
+        // @/ 是 src/ 的别名
+        // 所以这里假设你有 `src/variables.sass` 这个文件
+        // 注意：在 sass-loader v8 中，这个选项名是 "prependData"
+        prependData: `@import "~@/shared/variables.scss"`
+      },
+      // 默认情况下 `sass` 选项会同时对 `sass` 和 `scss` 语法同时生效
+      // 因为 `scss` 语法在内部也是由 sass-loader 处理的
+      // 但是在配置 `prependData` 选项的时候
+      // `scss` 语法会要求语句结尾必须有分号，`sass` 则要求必须没有分号
+      // 在这种情况下，我们可以使用 `scss` 选项，对 `scss` 语法进行单独配置
+      scss: {
+        prependData: `@import "~@/shared/variables.scss";`
+      },
+      less: {
+        // 注意用lessOptions包裹，不然识别不了，被坑了一手
+        lessOptions: {
+          modifyVars: {
+            /* less 变量覆盖，用于自定义 ant design 主题 */
+            "primary-color": "#007FFF",
+            "link-color": "#007FFF",
+            // "primary-color": "#673AB7",
+            // "link-color": "#673AB7",
+            "border-radius-base": "4px"
+          },
+          javascriptEnabled: true
+        }
+      }
+    }
+  },
+
   devServer: {
     proxy,
     port,

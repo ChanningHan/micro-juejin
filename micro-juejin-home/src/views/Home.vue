@@ -1,23 +1,34 @@
 <template>
-  <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png" />
-    <HelloWorld :msg="msg" />
+  <div class="Home">
+    <HomeMain></HomeMain>
+    <HomeSider></HomeSider>
   </div>
 </template>
 
 <script>
 // @ is an alias to /src
-import HelloWorld from "@/components/HelloWorld.vue";
+import HomeMain from "@comp/Home/HomeMain";
+import HomeSider from "@comp/Home/HomeSider";
 
 export default {
   name: "Home",
   components: {
-    HelloWorld
+    HomeMain,
+    HomeSider
   },
   data() {
     return {
-      msg: __CHANNING_package_name__
+      // msg: __CHANNING_package_name__
     };
   }
 };
 </script>
+<style lang="scss" scoped>
+.Home {
+  //width: 100vw;
+  width: 960px;
+  display: flex;
+  padding-top: 64px;
+  height: 100vh;
+}
+</style>

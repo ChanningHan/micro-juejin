@@ -16,7 +16,7 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/micro-juejin-main/src/layouts/BasicLayout" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.standard" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -28,6 +28,8 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\DM\WebstormProjects\PERSONNAL\micro-juejin\micro-juejin-main\src\layouts\BasicLayout" />
+      <recent name="C:\Users\DM\WebstormProjects\PERSONNAL\micro-juejin\micro-juejin-main\src\components\Home" />
       <recent name="C:\Users\DM\WebstormProjects\PERSONNAL\micro-juejin" />
     </key>
   </component>
@@ -40,7 +42,7 @@
       <option name="presentableId" value="Default" />
       <updated>1599574988566</updated>
       <workItem from="1599574989810" duration="698000" />
-      <workItem from="1599614731981" duration="15878000" />
+      <workItem from="1599614731981" duration="27869000" />
     </task>
     <servers />
   </component>
@@ -48,6 +50,10 @@
     <option name="version" value="3" />
   </component>
   <component name="WindowStateProjectService">
+    <state x="622" y="468" key="FileChooserDialogImpl" timestamp="1599637773783">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state x="622" y="468" key="FileChooserDialogImpl/0.0.2560.1400/-1080.-101.1080.1880@0.0.2560.1400" timestamp="1599637773783" />
     <state x="576" y="171" key="SettingsEditor" timestamp="1599617950291">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
@@ -68,17 +74,5 @@
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state x="759" y="-2" width="1037" height="1470" key="search.everywhere.popup/0.0.2560.1400/-1080.-101.1080.1880@0.0.2560.1400" timestamp="1599619779696" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="javascript">
-          <url>file://$PROJECT_DIR$/micro-juejin-main/src/layouts/BasicLayout.vue</url>
-          <line>136</line>
-          <properties lambdaOrdinal="-1" />
-          <option name="timeStamp" value="4" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
   </component>
 </project>

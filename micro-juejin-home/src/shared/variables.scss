@@ -1,0 +1,10 @@
+$defaultSize: 12px !default;
+@function rem($px){
+  @return $px / $defaultSize * 1rem;
+}
+
+$primaryColor: #007fff;
+$info-color: #70b4f9;
+$success-color: #1ed278;
+$warn-color: #ffa100;
+$danger-color: #ed6114;

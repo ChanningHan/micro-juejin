@@ -47,7 +47,6 @@
             </a-dropdown>
           </div>
         </transition>
-
         <div class="header_right-wrapper">
           <SearchInput :isCollapsed="isCollapsed"></SearchInput>
           <WriteButton :isCollapsed="isCollapsed"></WriteButton>
@@ -55,6 +54,13 @@
           <UserAvatar></UserAvatar>
         </div>
       </a-layout-header>
+    </transition>
+
+    <transition name="ease_fade">
+      <HomeNavBar
+        v-if="activeRule === '/micro-juejin-home'"
+        :showHeader="showHeader"
+      ></HomeNavBar>
     </transition>
 
     <a-layout-content
@@ -82,13 +88,15 @@ import SearchInput from "./BasicLayout/SearchInput";
 import WriteButton from "@layouts/BasicLayout/WriteButton";
 import BellBadge from "@layouts/BasicLayout/BellBadge";
 import UserAvatar from "@layouts/BasicLayout/UserAvatar";
+import HomeNavBar from "@layouts/BasicLayout/HomeNavBar";
 
 export default {
   components: {
     SearchInput,
     WriteButton,
     BellBadge,
-    UserAvatar
+    UserAvatar,
+    HomeNavBar
   },
   data() {
     return {
@@ -109,7 +117,7 @@ export default {
         : apps[0].$meta.title;
     },
     isCollapsed() {
-      return this.screenWidth < 1000;
+      return this.screenWidth < 1030;
     }
   },
   methods: {
@@ -157,31 +165,28 @@ export default {
   }
 };
 </script>
-<style>
-.menu_fade-enter,
-.menu_fade-leave-to {
-  opacity: 0;
-  //transform: translate3d(0px, -0px, 100px);
-  transform: perspective(500px) translateZ(100px);
-}
-</style>
 <style lang="scss" scoped>
 .BasicLayout_container {
   //background: #42b983;
+  transition: all 0.5s ease;
   min-height: 100vh;
-
+  max-height: 100vh;
+  overflow: hidden;
   .BasicLayout_header {
     background: #fff;
-    box-shadow: 0px 3px 3px rgba(0, 0, 0, 0.15);
+    box-shadow: 0px 3px 3px rgba(0, 0, 0, 0.05);
     display: flex;
     justify-content: center;
     align-items: center;
     position: fixed;
+    z-index: 1;
     width: 100%;
     transform-origin: top;
+
     .header_menu-wrapper {
       min-width: 130px;
       display: flex;
+
       .header_menu {
         line-height: 64px;
       }
@@ -197,8 +202,9 @@ export default {
       display: flex;
       justify-content: space-evenly;
       align-items: center;
-      width: 500px;
+      width: 520px;
       //background: #3a50d6;
+      transition: all 1.5s ease;
     }
   }
 
@@ -215,8 +221,20 @@ export default {
 
   .BasicLayout_footer {
     text-align: center;
-    background: #7c6fee;
   }
+}
+</style>
+
+<style>
+.menu_fade-enter,
+.menu_fade-leave-to {
+  opacity: 0;
+  transform: perspective(500px) translateZ(100px);
+}
+
+.ease_fade-enter,
+.ease_fade-leave-to {
+  opacity: 0;
 }
 
 /*transition相关*/
