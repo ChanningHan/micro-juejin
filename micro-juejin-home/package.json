@@ -23,6 +23,7 @@
     "vue": "^2.6.11",
     "vue-cli-plugin-style-resources-loader": "^0.1.4",
     "vue-router": "^3.2.0",
+    "vue-virtual-scroller": "^1.0.10",
     "vuex": "^3.4.0"
   },
   "devDependencies": {

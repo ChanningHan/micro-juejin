@@ -83,7 +83,7 @@
 import Vue from "vue";
 
 import peopleMixin from "@/mixins/peopleMixin";
-import Loading from "@/components/common/Loading";
+// import Loading from "@/components/common/Loading";
 import FLIPWrapper from "@comp/common/FLIPWrapper";
 
 import { mapGetters, mapMutations } from "vuex";
@@ -173,8 +173,8 @@ export default {
 
   components: {
     FLIPWrapper,
-    IconFont,
-    Loading
+    IconFont
+    // Loading
     // eslint-disable-next-line vue/no-unused-components
   }
 };

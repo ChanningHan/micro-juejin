@@ -1,7 +1,9 @@
 import people from "./people";
+import home from "./home";
 
 const API = {
-  people
+  people,
+  home
 };
 
 export default API;

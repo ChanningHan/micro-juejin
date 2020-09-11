@@ -11,6 +11,7 @@ export default {};
 <style scoped lang="scss">
 #HomeSider_container {
   background: #fff;
+  height: 1000px;
   width: 240px;
   margin-left: 16px;
   transition: all 1s;

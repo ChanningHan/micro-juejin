@@ -96,6 +96,7 @@ import WriteButton from "@layouts/BasicLayout/WriteButton";
 import BellBadge from "@layouts/BasicLayout/BellBadge";
 import UserAvatar from "@layouts/BasicLayout/UserAvatar";
 import HomeNavBar from "@layouts/BasicLayout/HomeNavBar";
+import { actions, state } from "@/shared/subRegister";
 
 export default {
   components: {
@@ -124,7 +125,7 @@ export default {
         : apps[0].$meta.title;
     },
     isCollapsed() {
-      return this.screenWidth < 1100;
+      return this.screenWidth < 960;
     }
   },
   methods: {
@@ -140,6 +141,11 @@ export default {
       }, 500);
     },
     handleScroll(e) {
+      const { clientHeight, scrollHeight, scrollTop } = e.target;
+      if (scrollHeight - scrollTop === clientHeight) {
+        state.scrollToBottom = true;
+        actions.setGlobalState(state);
+      }
       this.scrollTop = e.target.scrollTop;
     }
   },
@@ -172,6 +178,7 @@ export default {
   }
 };
 </script>
+
 <style lang="scss" scoped>
 .BasicLayout_container {
   //background: #42b983;
@@ -181,11 +188,11 @@ export default {
   overflow: hidden;
   .BasicLayout_header {
     background: #fff;
-    box-shadow: 0px 3px 3px rgba(0, 0, 0, 0.05);
+    box-shadow: 0px 3px 3px rgba(110, 110, 110, 0.15);
     display: flex;
     justify-content: center;
     position: fixed;
-    z-index: 1;
+    z-index: 2;
     width: 100%;
     transform-origin: top;
     .BasicLayout_header_container {

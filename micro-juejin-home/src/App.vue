@@ -10,12 +10,18 @@ export default {
   components: {
     BasicLayout
   },
+  mounted() {
+    document.addEventListener("touchmove", function() {
+      alert("click");
+    });
+  },
   created() {
     console.log(process.env);
   }
 };
 </script>
 <style lang="scss">
+@import "//at.alicdn.com/t/font_2058446_rjhl03m5rl.css";
 ::-webkit-scrollbar {
   width: 12px;
   height: 12px;

@@ -5,6 +5,7 @@ import App from "./App.vue";
 import { routes } from "./router";
 import store from "@/store";
 import "@/filter";
+
 import "@/shared/registAntd";
 
 const packageName = require("../package.json").name;
@@ -42,7 +43,16 @@ export async function bootstrap() {
   console.log("[vue] vue app bootstraped");
 }
 
+export let onGlobalStateChange;
+
 export async function mount(props) {
+  onGlobalStateChange = props.onGlobalStateChange;
+  /*全局监听*/
+  // props.onGlobalStateChange((state, prev) => {
+  //   // state: 变更后的状态; prev 变更前的状态
+  //   console.log("hhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhh");
+  //   console.log(state, prev);
+  // });
   console.log("[vue] props from main framework", props);
   VueRender(props);
 }

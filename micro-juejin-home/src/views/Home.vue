@@ -25,10 +25,9 @@ export default {
 </script>
 <style lang="scss" scoped>
 .Home {
-  //width: 100vw;
   width: 960px;
   display: flex;
   padding-top: 64px;
-  height: 100vh;
+  height: 100%;
 }
 </style>

@@ -2,7 +2,7 @@
   <div
     id="NavBar"
     :style="{
-      top: showHeader ? '64px' : '0'
+      top: showHeader ? '63px' : '0'
       // top: '64px'
     }"
   >
@@ -56,6 +56,7 @@ export default {
   //height: 46px;
   line-height: 46px;
   position: fixed;
+  z-index: 1;
   //top: 0;
   left: 0;
   display: flex;

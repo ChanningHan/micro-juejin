@@ -14,13 +14,20 @@
 
 import Vue from "vue";
 // eslint-disable-next-line no-unused-vars
-import { Button, Empty, notification, message } from "ant-design-vue";
+import {
+  Button,
+  Empty,
+  notification,
+  message,
+  Skeleton,
+  Icon
+} from "ant-design-vue";
 //
 Vue.prototype.$notification = notification;
 Vue.prototype.$message = message;
 
 /*需要注册的组件名字, 注册之前需要确保已经import这个组件*/
-const components = [Button, Empty, notification, message];
+const components = [Button, Empty, notification, message, Skeleton, Icon];
 register(components);
 
 function register(components) {

@@ -15,7 +15,7 @@
 const apps = [
   {
     name: "micro-juejin-home",
-    entry: "//localhost:8071",
+    entry: "//192.168.2.29:8071",
     container: "#subApp",
     activeRule: "/micro-juejin-home",
     $meta: {
@@ -24,7 +24,7 @@ const apps = [
   },
   {
     name: "micro-juejin-boiling",
-    entry: "//localhost:8072",
+    entry: "//192.168.2.29:8072",
     container: "#subApp",
     activeRule: "/micro-juejin-boiling",
     $meta: {
@@ -33,7 +33,7 @@ const apps = [
   },
   {
     name: "micro-juejin-topic",
-    entry: "//localhost:8073",
+    entry: "//192.168.2.29:8073",
     container: "#subApp",
     activeRule: "/micro-juejin-topic",
     $meta: {
@@ -42,7 +42,7 @@ const apps = [
   },
   {
     name: "micro-juejin-brochure",
-    entry: "//localhost:8074",
+    entry: "//192.168.2.29:8074",
     container: "#subApp",
     activeRule: "/micro-juejin-brochure",
     $meta: {
@@ -51,7 +51,7 @@ const apps = [
   },
   {
     name: "micro-juejin-activity",
-    entry: "//localhost:8075",
+    entry: "//192.168.2.29:8075",
     container: "#subApp",
     activeRule: "/micro-juejin-activity",
     $meta: {

@@ -1,13 +1,40 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="685259ab-1505-4513-94b2-d447319c12c0" name="Default Changelist" comment="" />
+    <list default="true" id="685259ab-1505-4513-94b2-d447319c12c0" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/micro-juejin-boiling/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/micro-juejin-boiling/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/micro-juejin-home/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/micro-juejin-home/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/micro-juejin-home/src/App.vue" beforeDir="false" afterPath="$PROJECT_DIR$/micro-juejin-home/src/App.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/micro-juejin-home/src/apis/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/micro-juejin-home/src/apis/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/micro-juejin-home/src/components/Home/HomeMain/ArticleCard.vue" beforeDir="false" afterPath="$PROJECT_DIR$/micro-juejin-home/src/components/Home/HomeMain/ArticleCard.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/micro-juejin-home/src/components/Home/HomeMain/ArticleList.vue" beforeDir="false" afterPath="$PROJECT_DIR$/micro-juejin-home/src/components/Home/HomeMain/ArticleList.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/micro-juejin-home/src/components/Home/HomeMain/NavTabs.vue" beforeDir="false" afterPath="$PROJECT_DIR$/micro-juejin-home/src/components/Home/HomeMain/NavTabs.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/micro-juejin-home/src/components/Home/HomeMain/index.vue" beforeDir="false" afterPath="$PROJECT_DIR$/micro-juejin-home/src/components/Home/HomeMain/index.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/micro-juejin-home/src/components/Home/HomeSider/index.vue" beforeDir="false" afterPath="$PROJECT_DIR$/micro-juejin-home/src/components/Home/HomeSider/index.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/micro-juejin-home/src/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/micro-juejin-home/src/main.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/micro-juejin-home/src/shared/registAntd.js" beforeDir="false" afterPath="$PROJECT_DIR$/micro-juejin-home/src/shared/registAntd.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/micro-juejin-home/src/store/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/micro-juejin-home/src/store/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/micro-juejin-home/src/views/Home.vue" beforeDir="false" afterPath="$PROJECT_DIR$/micro-juejin-home/src/views/Home.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/micro-juejin-home/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/micro-juejin-home/yarn.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/micro-juejin-main/src/App.vue" beforeDir="false" afterPath="$PROJECT_DIR$/micro-juejin-main/src/App.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/micro-juejin-main/src/components/People/PeopleList.vue" beforeDir="false" afterPath="$PROJECT_DIR$/micro-juejin-main/src/components/People/PeopleList.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/micro-juejin-main/src/layouts/BasicLayout.vue" beforeDir="false" afterPath="$PROJECT_DIR$/micro-juejin-main/src/layouts/BasicLayout.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/micro-juejin-main/src/layouts/BasicLayout/HomeNavBar.vue" beforeDir="false" afterPath="$PROJECT_DIR$/micro-juejin-main/src/layouts/BasicLayout/HomeNavBar.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/micro-juejin-main/src/shared/microApps.js" beforeDir="false" afterPath="$PROJECT_DIR$/micro-juejin-main/src/shared/microApps.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/micro-juejin-main/src/shared/subRegister.js" beforeDir="false" afterPath="$PROJECT_DIR$/micro-juejin-main/src/shared/subRegister.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/micro-juejin-server/src/routers/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/micro-juejin-server/src/routers/index.js" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
   <component name="ProjectId" id="1hESvPFO0Yk7tBtV7PXf7cn8tin" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -16,7 +43,7 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../UTILS/templates/vue-normal-antd" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/micro-juejin-server/src/routers" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.standard" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -25,9 +52,11 @@
     <property name="node.js.selected.package.standard" value="" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="settings.javascript.linters.eslint" />
+    <property name="ts.external.directory.path" value="C:\WebStorm\WebStorm 2020.2\plugins\JavaScriptLanguage\jsLanguageServicesImpl\external" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\DM\WebstormProjects\PERSONNAL\micro-juejin\micro-juejin-server\src\routers" />
       <recent name="C:\Users\DM\WebstormProjects\PERSONNAL\micro-juejin\micro-juejin-main\src\layouts\BasicLayout" />
       <recent name="C:\Users\DM\WebstormProjects\PERSONNAL\micro-juejin\micro-juejin-main\src\components\Home" />
       <recent name="C:\Users\DM\WebstormProjects\PERSONNAL\micro-juejin" />
@@ -43,6 +72,7 @@
       <updated>1599574988566</updated>
       <workItem from="1599574989810" duration="698000" />
       <workItem from="1599614731981" duration="31685000" />
+      <workItem from="1599702237415" duration="26368000" />
     </task>
     <servers />
   </component>

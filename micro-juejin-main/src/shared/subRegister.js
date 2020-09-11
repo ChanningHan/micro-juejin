@@ -2,7 +2,8 @@ import {
   registerMicroApps,
   start,
   runAfterFirstMounted,
-  setDefaultMountApp
+  setDefaultMountApp,
+  initGlobalState
 } from "qiankun";
 
 import apps from "@/shared/microApps";
@@ -88,3 +89,18 @@ start({
 runAfterFirstMounted(() => {
   console.log("[MainApp] first app mounted");
 });
+
+// 初始化 state
+export const state = {
+  testAttr: "Hi Channing",
+  scrollToBottom: false
+};
+export const actions = initGlobalState(state);
+actions.onGlobalStateChange((state, prev) => {
+  // state: 变更后的状态; prev 变更前的状态
+  console.log("主应用全局监听到state发生变化!!!!!!!!!!!!!!!!!!!!!!!!!!");
+  console.log(state, prev);
+});
+state.testAttr = "Hi Channing again!!!!!!!";
+actions.setGlobalState(state);
+actions.offGlobalStateChange();
