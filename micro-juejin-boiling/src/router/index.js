@@ -1,14 +1,14 @@
 import Vue from "vue";
 import VueRouter from "vue-router";
-import Home from "../views/Home.vue";
+import Boiling from "@views/Boiling";
 
 Vue.use(VueRouter);
 
 export const routes = [
   {
     path: "/",
-    name: "Home",
-    component: Home
+    name: "Boiling",
+    component: Boiling
   },
   {
     path: "/people",
