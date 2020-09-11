@@ -8,11 +8,17 @@
   >
     <div class="NavBar_container">
       <div class="nav_list">
-        <div v-for="tag in navList" :key="tag" class="nav_list-item">
+        <div
+          v-for="tag in navList"
+          :key="tag"
+          class="nav_list-item"
+          :style="{ color: activeTag === tag ? '#007FFF' : '#71777c' }"
+          @click="activeTag = tag"
+        >
           {{ tag }}
         </div>
       </div>
-      <div>
+      <div class="tag_manage-btn">
         <a-button type="link">标签管理</a-button>
       </div>
     </div>
@@ -29,6 +35,7 @@ export default {
   },
   data() {
     return {
+      activeTag: "前端",
       navList: [
         "推荐",
         "关注",
@@ -67,6 +74,7 @@ export default {
     justify-content: space-between;
     overflow-x: auto;
     overflow-y: hidden;
+    position: relative;
     .nav_list {
       display: flex;
       .nav_list-item {
@@ -79,6 +87,10 @@ export default {
           color: #007fff;
         }
       }
+    }
+    .tag_manage-btn {
+      position: absolute;
+      left: 860px;
     }
   }
 }

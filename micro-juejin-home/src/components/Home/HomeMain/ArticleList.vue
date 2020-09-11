@@ -5,7 +5,7 @@
         ref="rec"
         class="scroller"
         :items="articleList"
-        :minItemSize="0.5"
+        :minItemSize="0.1"
         key-field="id"
         v-slot="{ item }"
       >
@@ -75,6 +75,7 @@ export default {
     padding: 0 16px;
     display: flex;
     height: 116px;
+    overflow: hidden;
     background: #fff;
   }
 }

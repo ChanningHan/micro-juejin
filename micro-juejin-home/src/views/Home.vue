@@ -25,9 +25,11 @@ export default {
 </script>
 <style lang="scss" scoped>
 .Home {
+  //width: 550px;
   width: 960px;
   display: flex;
   padding-top: 64px;
+  overflow-x: hidden;
   height: 100%;
 }
 </style>

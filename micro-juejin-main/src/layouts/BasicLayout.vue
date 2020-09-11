@@ -162,8 +162,11 @@ export default {
     scrollTop: debounce(
       function(newVal, oldVal) {
         this.showHeader = newVal - oldVal <= 0;
+        if (newVal <= 0) {
+          this.showHeader = true;
+        }
       },
-      100,
+      200,
       false
     )
   },
@@ -183,8 +186,9 @@ export default {
 .BasicLayout_container {
   //background: #42b983;
   transition: all 0.5s ease;
-  min-height: 100vh;
-  max-height: 100vh;
+  //min-height: 100%;
+  //max-height: 100vh;
+  height: 100vh;
   overflow: hidden;
   .BasicLayout_header {
     background: #fff;
@@ -226,7 +230,10 @@ export default {
 
   .BasicLayout_content {
     padding: 64px 0px 0px;
-    overflow: auto;
+    margin: 0;
+    height: 100vh;
+    overflow-y: auto;
+    overflow-x: hidden;
     text-align: center;
     #subApp {
       width: 100%;
@@ -237,6 +244,21 @@ export default {
 
   .BasicLayout_footer {
     text-align: center;
+    padding: 4px;
+    background: rgba(0, 127, 255, 0.09);
+    //box-shadow: 0 -12px 12px rgba(218, 231, 246);
+    color: #fff;
+    font-weight: 600;
+    font-size: 14px;
+    z-index: 9999;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+  }
+}
+@media screen and (max-width: 600px) {
+  .BasicLayout_container {
+    height: 100%;
   }
 }
 </style>

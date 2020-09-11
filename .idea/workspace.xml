@@ -3,27 +3,25 @@
   <component name="ChangeListManager">
     <list default="true" id="685259ab-1505-4513-94b2-d447319c12c0" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/micro-juejin-boiling/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/micro-juejin-boiling/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/micro-juejin-home/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/micro-juejin-home/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/micro-juejin-home/src/App.vue" beforeDir="false" afterPath="$PROJECT_DIR$/micro-juejin-home/src/App.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/micro-juejin-home/src/apis/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/micro-juejin-home/src/apis/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/micro-juejin-home/src/apis/home.js" beforeDir="false" afterPath="$PROJECT_DIR$/micro-juejin-home/src/apis/home.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/micro-juejin-home/src/components/Home/HomeMain/ArticleCard.vue" beforeDir="false" afterPath="$PROJECT_DIR$/micro-juejin-home/src/components/Home/HomeMain/ArticleCard.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/micro-juejin-home/src/components/Home/HomeMain/ArticleList.vue" beforeDir="false" afterPath="$PROJECT_DIR$/micro-juejin-home/src/components/Home/HomeMain/ArticleList.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/micro-juejin-home/src/components/Home/HomeMain/NavTabs.vue" beforeDir="false" afterPath="$PROJECT_DIR$/micro-juejin-home/src/components/Home/HomeMain/NavTabs.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/micro-juejin-home/src/components/Home/HomeMain/index.vue" beforeDir="false" afterPath="$PROJECT_DIR$/micro-juejin-home/src/components/Home/HomeMain/index.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/micro-juejin-home/src/components/Home/HomeSider/ADCard.vue" beforeDir="false" afterPath="$PROJECT_DIR$/micro-juejin-home/src/components/Home/HomeSider/ADCard.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/micro-juejin-home/src/components/Home/HomeSider/DownloadCard.vue" beforeDir="false" afterPath="$PROJECT_DIR$/micro-juejin-home/src/components/Home/HomeSider/DownloadCard.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/micro-juejin-home/src/components/Home/HomeSider/LinkList.vue" beforeDir="false" afterPath="$PROJECT_DIR$/micro-juejin-home/src/components/Home/HomeSider/LinkList.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/micro-juejin-home/src/components/Home/HomeSider/MoreBlock.vue" beforeDir="false" afterPath="$PROJECT_DIR$/micro-juejin-home/src/components/Home/HomeSider/MoreBlock.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/micro-juejin-home/src/components/Home/HomeSider/RankList.vue" beforeDir="false" afterPath="$PROJECT_DIR$/micro-juejin-home/src/components/Home/HomeSider/RankList.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/micro-juejin-home/src/components/Home/HomeSider/index.vue" beforeDir="false" afterPath="$PROJECT_DIR$/micro-juejin-home/src/components/Home/HomeSider/index.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/micro-juejin-home/src/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/micro-juejin-home/src/main.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/micro-juejin-home/src/shared/registAntd.js" beforeDir="false" afterPath="$PROJECT_DIR$/micro-juejin-home/src/shared/registAntd.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/micro-juejin-home/src/store/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/micro-juejin-home/src/store/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/micro-juejin-home/src/services/HomeService.js" beforeDir="false" afterPath="$PROJECT_DIR$/micro-juejin-home/src/services/HomeService.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/micro-juejin-home/src/store/modules/home/actions.js" beforeDir="false" afterPath="$PROJECT_DIR$/micro-juejin-home/src/store/modules/home/actions.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/micro-juejin-home/src/views/Home.vue" beforeDir="false" afterPath="$PROJECT_DIR$/micro-juejin-home/src/views/Home.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/micro-juejin-home/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/micro-juejin-home/yarn.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/micro-juejin-main/src/App.vue" beforeDir="false" afterPath="$PROJECT_DIR$/micro-juejin-main/src/App.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/micro-juejin-main/src/components/People/PeopleList.vue" beforeDir="false" afterPath="$PROJECT_DIR$/micro-juejin-main/src/components/People/PeopleList.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/micro-juejin-main/src/layouts/BasicLayout.vue" beforeDir="false" afterPath="$PROJECT_DIR$/micro-juejin-main/src/layouts/BasicLayout.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/micro-juejin-main/src/layouts/BasicLayout/HomeNavBar.vue" beforeDir="false" afterPath="$PROJECT_DIR$/micro-juejin-main/src/layouts/BasicLayout/HomeNavBar.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/micro-juejin-main/src/shared/microApps.js" beforeDir="false" afterPath="$PROJECT_DIR$/micro-juejin-main/src/shared/microApps.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/micro-juejin-main/src/shared/subRegister.js" beforeDir="false" afterPath="$PROJECT_DIR$/micro-juejin-main/src/shared/subRegister.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/micro-juejin-server/src/routers/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/micro-juejin-server/src/routers/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/micro-juejin-main/src/layouts/BasicLayout/WriteButton.vue" beforeDir="false" afterPath="$PROJECT_DIR$/micro-juejin-main/src/layouts/BasicLayout/WriteButton.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/micro-juejin-server/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/micro-juejin-server/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/micro-juejin-server/src/routers/home.js" beforeDir="false" afterPath="$PROJECT_DIR$/micro-juejin-server/src/routers/home.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/micro-juejin-server/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/micro-juejin-server/yarn.lock" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -43,6 +41,8 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="javascript.nodejs.core.library.configured.version" value="12.16.1" />
+    <property name="javascript.nodejs.core.library.typings.version" value="12.12.57" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/micro-juejin-server/src/routers" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.standard" value="true" />
@@ -72,7 +72,7 @@
       <updated>1599574988566</updated>
       <workItem from="1599574989810" duration="698000" />
       <workItem from="1599614731981" duration="31685000" />
-      <workItem from="1599702237415" duration="26368000" />
+      <workItem from="1599702237415" duration="41908000" />
     </task>
     <servers />
   </component>
@@ -96,13 +96,17 @@
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state x="777" y="118" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser/0.0.2560.1400/-1080.-101.1080.1880@0.0.2560.1400" timestamp="1599619473700" />
+    <state x="833" y="271" width="894" height="858" key="find.popup" timestamp="1599830880453">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state x="833" y="271" width="894" height="858" key="find.popup/0.0.2560.1400/-1080.-101.1080.1880@0.0.2560.1400" timestamp="1599830880453" />
     <state x="768" y="322" key="run.anything.popup" timestamp="1599631813265">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state x="768" y="322" key="run.anything.popup/0.0.2560.1400/-1080.-101.1080.1880@0.0.2560.1400" timestamp="1599631813265" />
-    <state x="759" y="-2" width="1037" height="1470" key="search.everywhere.popup" timestamp="1599661871643">
+    <state x="759" y="-2" width="1037" height="1470" key="search.everywhere.popup" timestamp="1599817095149">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state x="759" y="-2" width="1037" height="1470" key="search.everywhere.popup/0.0.2560.1400/-1080.-101.1080.1880@0.0.2560.1400" timestamp="1599661871643" />
+    <state x="759" y="-2" width="1037" height="1470" key="search.everywhere.popup/0.0.2560.1400/-1080.-101.1080.1880@0.0.2560.1400" timestamp="1599817095149" />
   </component>
 </project>

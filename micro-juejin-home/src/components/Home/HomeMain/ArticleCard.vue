@@ -1,5 +1,9 @@
 <template>
-  <div class="ArticleCard">
+  <a
+    class="ArticleCard"
+    :href="`https://juejin.im/post/${article.id}`"
+    target="_blank"
+  >
     <div class="ArticleCard_main-wrapper">
       <div class="ArticleCard_head">
         <span>{{ article.author }}</span>
@@ -26,10 +30,10 @@
         >
       </a-button-group>
     </div>
-    <div class="ArticleCard_photo">
+    <div class="ArticleCard_photo" v-if="article.photo">
       <img :src="article.photo" alt="" />
     </div>
-  </div>
+  </a>
 </template>
 
 <script>
@@ -50,9 +54,17 @@ export default {
   justify-content: space-between;
   align-items: center;
   background: #fff;
-
+  transition: all 0.3s ease;
+  z-index: 1;
+  &:hover {
+    background: rgba(0, 127, 255, 0.1);
+    border-bottom: 1.5px solid rgba(110, 110, 110, 0.1);
+    box-shadow: inset 6px 6px 6px rgba(110, 110, 110, 0.15);
+    transform: perspective(500px) translateZ(-40px);
+  }
   .ArticleCard_main-wrapper {
     text-align: left;
+    flex: 1;
     .ArticleCard_head {
       color: #b2bac2;
       font-size: 12px;
@@ -80,11 +92,15 @@ export default {
       }
     }
     .ArticleCard_title {
-      color: #2e3135;
-      font-weight: 600;
-      font-size: 18px;
-      text-overflow: ellipsis;
+      width: 100%;
       overflow: hidden;
+      text-overflow: ellipsis;
+      span {
+        color: #2e3135;
+        font-weight: 600;
+        font-size: 18px;
+        white-space: nowrap;
+      }
     }
     .ArticleCard_action {
       display: flex;
@@ -104,7 +120,7 @@ export default {
   .ArticleCard_photo {
     width: 60px;
     height: 60px;
-    background: #3a50d6;
+    //background: #3a50d6;
     transition: all 1s ease;
     img {
       height: 100%;
@@ -117,9 +133,14 @@ export default {
 
 @media screen and (max-width: 600px) {
   .ArticleCard_photo {
-    //width: 0;
     opacity: 0;
+    //display: none;
+    position: absolute;
+    right: 0;
     transform: scale(0) translateX(-500px);
+  }
+  .ArticleCard_main-wrapper {
+    width: calc(100vw - 150px);
   }
 }
 </style>

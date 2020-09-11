@@ -10,11 +10,6 @@ export default {
   components: {
     BasicLayout
   },
-  mounted() {
-    document.addEventListener("touchmove", function() {
-      alert("click");
-    });
-  },
   created() {
     console.log(process.env);
   }

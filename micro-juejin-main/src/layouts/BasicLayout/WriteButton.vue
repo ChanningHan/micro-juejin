@@ -36,6 +36,7 @@ export default {
   methods: {
     handleClickArticle() {
       console.log("handleClickArticle");
+      window.open("https://juejin.im/editor/drafts");
     },
     handleClickBoiling() {
       console.log("handleClickBoiling");

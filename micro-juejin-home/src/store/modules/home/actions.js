@@ -4,8 +4,8 @@ import { SET_ARTICLE_LIST } from "@/store/modules/home/mutations-type";
 const homeService = HomeService.getInstance();
 
 const actions = {
-  getArticleList: async ({ commit }, num) => {
-    const res = await homeService.getArticleList(num);
+  getArticleList: async ({ commit }, limit) => {
+    const res = await homeService.getArticleList(limit);
     commit(SET_ARTICLE_LIST, res);
   }
 };
