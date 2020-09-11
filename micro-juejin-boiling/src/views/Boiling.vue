@@ -22,22 +22,13 @@ export default {
   data() {
     return {
       test: true,
+      // eslint-disable-next-line no-undef
       msg: __CHANNING_package_name__
     };
   }
 };
 </script>
-<style>
-.side-fade-enter,
-.side-fade-leave-to {
-  opacity: 0;
-}
 
-.side-fade-enter-active,
-.side-fade-leave-active {
-  transition: all 1s ease;
-}
-</style>
 <style lang="scss" scoped>
 #Boiling {
   display: flex;
@@ -67,5 +58,15 @@ export default {
   //  transform: scale(0);
   //  transition: display 5s ease;
   //}
+}
+
+.side-fade-enter,
+.side-fade-leave-to {
+  opacity: 0;
+}
+
+.side-fade-enter-active,
+.side-fade-leave-active {
+  transition: all 1s ease;
 }
 </style>

@@ -25,14 +25,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="685259ab-1505-4513-94b2-d447319c12c0" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/micro-juejin-boiling/src/views/Boiling.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/micro-juejin-boiling/src/shared/registAntd.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/micro-juejin-boiling/src/App.vue" beforeDir="false" afterPath="$PROJECT_DIR$/micro-juejin-boiling/src/App.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/micro-juejin-boiling/src/components/HelloWorld.vue" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/micro-juejin-boiling/src/layouts/BasicLayout.vue" beforeDir="false" afterPath="$PROJECT_DIR$/micro-juejin-boiling/src/layouts/BasicLayout.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/micro-juejin-boiling/src/router/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/micro-juejin-boiling/src/router/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/micro-juejin-boiling/src/views/Home.vue" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/micro-juejin-home/src/views/Home.vue" beforeDir="false" afterPath="$PROJECT_DIR$/micro-juejin-home/src/views/Home.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/micro-juejin-boiling/babel.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/micro-juejin-boiling/babel.config.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/micro-juejin-boiling/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/micro-juejin-boiling/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/micro-juejin-boiling/src/components/Boiling/NavBar.vue" beforeDir="false" afterPath="$PROJECT_DIR$/micro-juejin-boiling/src/components/Boiling/NavBar.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/micro-juejin-boiling/src/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/micro-juejin-boiling/src/main.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/micro-juejin-boiling/src/views/Boiling.vue" beforeDir="false" afterPath="$PROJECT_DIR$/micro-juejin-boiling/src/views/Boiling.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/micro-juejin-boiling/vue.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/micro-juejin-boiling/vue.config.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/micro-juejin-boiling/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/micro-juejin-boiling/yarn.lock" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -89,7 +90,7 @@
       <updated>1599574988566</updated>
       <workItem from="1599574989810" duration="698000" />
       <workItem from="1599614731981" duration="31685000" />
-      <workItem from="1599702237415" duration="44298000" />
+      <workItem from="1599702237415" duration="45553000" />
     </task>
     <servers />
   </component>
@@ -106,6 +107,10 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="#1 feat: antd按需引入; feat: NavBar导航菜单" />
+    <option name="LAST_COMMIT_MESSAGE" value="#1 feat: antd按需引入; feat: NavBar导航菜单" />
   </component>
   <component name="WindowStateProjectService">
     <state x="569" y="260" key="FileChooserDialogImpl" timestamp="1599831281807">
