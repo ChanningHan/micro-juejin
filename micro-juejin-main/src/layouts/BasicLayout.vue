@@ -64,10 +64,11 @@
     </transition>
 
     <transition name="ease_fade">
-      <HomeNavBar
-        v-if="activeRule === '/micro-juejin-home'"
+      <NavBar
+        v-if="showNavBar"
         :showHeader="showHeader"
-      ></HomeNavBar>
+        :activeRule="activeRule"
+      ></NavBar>
     </transition>
 
     <a-layout-content
@@ -95,7 +96,7 @@ import SearchInput from "./BasicLayout/SearchInput";
 import WriteButton from "@layouts/BasicLayout/WriteButton";
 import BellBadge from "@layouts/BasicLayout/BellBadge";
 import UserAvatar from "@layouts/BasicLayout/UserAvatar";
-import HomeNavBar from "@layouts/BasicLayout/HomeNavBar";
+import NavBar from "@layouts/BasicLayout/NavBar";
 import { actions, state } from "@/shared/subRegister";
 
 export default {
@@ -104,7 +105,7 @@ export default {
     WriteButton,
     BellBadge,
     UserAvatar,
-    HomeNavBar
+    NavBar
   },
   data() {
     return {
@@ -126,6 +127,29 @@ export default {
     },
     isCollapsed() {
       return this.screenWidth < 960;
+    },
+    showNavBar(){
+       switch(this.activeRule){
+          case '/micro-juejin-home':
+              return true;
+              break;
+          case '/micro-juejin-boiling':
+              return this.isCollapsed;
+              break;
+          case '/micro-juejin-topic':
+              return true;
+              break;
+          case '/micro-juejin-brochure':
+              return false;
+              break;
+          case '/micro-juejin-activity':
+              return false;
+              break;
+          default: 
+              return false
+       }
+        
+      
     }
   },
   methods: {
