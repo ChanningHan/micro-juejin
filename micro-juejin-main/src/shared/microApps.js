@@ -12,52 +12,51 @@
  * @$meta 可选，不是注册微应用必须的，是我在这个主应用中为了给Header的菜单项提供title而添加的，为了区别这是一个私有参数以及避免冲突在前面加了'$'
  *
  * */
-const apps = [
-  {
-    name: "micro-juejin-home",
-    entry: "//192.168.2.29:8071",
-    container: "#subApp",
-    activeRule: "/micro-juejin-home",
-    $meta: {
-      title: "首页"
+const apps = [{
+        name: "micro-juejin-home",
+        entry: "//localhost:8071",
+        container: "#subApp",
+        activeRule: "/micro-juejin-home",
+        $meta: {
+            title: "首页"
+        }
+    },
+    {
+        name: "micro-juejin-boiling",
+        entry: "//localhost:8072",
+        container: "#subApp",
+        activeRule: "/micro-juejin-boiling",
+        $meta: {
+            title: "沸点"
+        }
+    },
+    {
+        name: "micro-juejin-topic",
+        entry: "//localhost:8073",
+        container: "#subApp",
+        activeRule: "/micro-juejin-topic",
+        $meta: {
+            title: "话题"
+        }
+    },
+    {
+        name: "micro-juejin-brochure",
+        entry: "//localhost:8074",
+        container: "#subApp",
+        activeRule: "/micro-juejin-brochure",
+        $meta: {
+            title: "小册"
+        }
+    },
+    {
+        name: "micro-juejin-activity",
+        entry: "//localhost:8075",
+        container: "#subApp",
+        activeRule: "/micro-juejin-activity",
+        $meta: {
+            title: "活动"
+        }
     }
-  },
-  {
-    name: "micro-juejin-boiling",
-    entry: "//192.168.2.29:8072",
-    container: "#subApp",
-    activeRule: "/micro-juejin-boiling",
-    $meta: {
-      title: "沸点"
-    }
-  },
-  {
-    name: "micro-juejin-topic",
-    entry: "//192.168.2.29:8073",
-    container: "#subApp",
-    activeRule: "/micro-juejin-topic",
-    $meta: {
-      title: "话题"
-    }
-  },
-  {
-    name: "micro-juejin-brochure",
-    entry: "//192.168.2.29:8074",
-    container: "#subApp",
-    activeRule: "/micro-juejin-brochure",
-    $meta: {
-      title: "小册"
-    }
-  },
-  {
-    name: "micro-juejin-activity",
-    entry: "//192.168.2.29:8075",
-    container: "#subApp",
-    activeRule: "/micro-juejin-activity",
-    $meta: {
-      title: "活动"
-    }
-  }
 ];
 
 module.exports = apps;
