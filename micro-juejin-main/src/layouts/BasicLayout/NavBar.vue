@@ -12,11 +12,11 @@
           :style="{ color: activeTag === tag ? '#007FFF' : '#71777c' }"
           @click="activeTag = tag"
         >{{ tag }}</div>
-        <div class="tag_manage-btn" v-if="activeRule==='/micro-juejin-home'">
+        
+      </div>
+      <div class="tag_manage-btn" v-if="activeRule==='/micro-juejin-home'">
         <a-button type="link">标签管理</a-button>
         </div>  
-      </div>
-      
     </div>
   </div>
 </template>
@@ -88,15 +88,18 @@ export default {
   z-index: 1;
   //top: 0;
   left: 0;
+  display: flex;
+  justify-content: center;
   .NavBar_container {
     display: flex;
-    // width: 960px;
+    width: 960px;
     justify-content: space-between;
     overflow-x: auto;
     overflow-y: hidden;
     position: relative;
     .nav_list {
       display: flex;
+      min-width: max-content;
       .nav_list-item {
         padding: 0 16px;
         font-size: 14px;
@@ -107,6 +110,10 @@ export default {
           color: #007fff;
         }
       }
+    }
+    .tag_manage-btn {
+      // min-width: 100px;
+      // background-color: #dc0816;
     }
   }
 }

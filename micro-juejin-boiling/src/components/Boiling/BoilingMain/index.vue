@@ -1,9 +1,19 @@
 <template>
-  <div class="BoilingMain"></div>
+  <div class="BoilingMain">
+    <boiling-text-area></boiling-text-area> 
+    <boiling-list></boiling-list>
+  </div>
 </template>
 
 <script>
-export default {};
+import BoilingTextArea from '@/components/Boiling/BoilingMain/BoilingTextArea'
+import BoilingList from '@/components/Boiling/BoilingMain/BoilingList'
+export default {
+  components: {
+    BoilingTextArea,
+    BoilingList
+  }
+};
 </script>
 
 <style scoped lang="scss">

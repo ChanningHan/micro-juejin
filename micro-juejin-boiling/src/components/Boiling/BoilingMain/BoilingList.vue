@@ -3,7 +3,12 @@
 </template>
 
 <script>
-export default {};
+import BoilingCard from '@/components/Boiling/BoilingMain/BoilingCard'
+export default {
+  components: {
+    BoilingCard
+  }
+};
 </script>
 
 <style scoped lang="scss"></style>
