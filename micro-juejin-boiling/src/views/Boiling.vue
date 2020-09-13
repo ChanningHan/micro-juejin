@@ -41,7 +41,7 @@ export default {
   display: flex;
   padding-top: 64px;
   overflow-x: hidden;
-  height: 100%;
+  // height: 100%;
 }
 @media screen and (max-width: 980px) {
   .NavBar,
@@ -52,6 +52,7 @@ export default {
   }
   .BoilingMain {
     flex: 1;
+    margin: 0;
   }
   //.BoilingSider {
   //  opacity: 0;

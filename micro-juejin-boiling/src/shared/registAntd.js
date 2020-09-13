@@ -14,16 +14,22 @@
 
 import Vue from "vue";
 // eslint-disable-next-line no-unused-vars
-import { Button, Avatar, Menu } from "ant-design-vue";
+import {
+    Button,
+    Avatar,
+    Menu,
+    Input,
+    Skeleton
+} from "ant-design-vue";
 //
 
 /*需要注册的组件名字, 注册之前需要确保已经import这个组件*/
-const components = [Button, Avatar, Menu];
+const components = [Button, Avatar, Menu, Input, Skeleton];
 register(components);
 
 function register(components) {
-  components.forEach(comp => {
-    Vue.use(comp);
-  });
-  // Vue.component(Button.name, Button);
+    components.forEach(comp => {
+        Vue.use(comp);
+    });
+    // Vue.component(Button.name, Button);
 }
