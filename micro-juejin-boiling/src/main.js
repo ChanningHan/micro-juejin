@@ -42,7 +42,11 @@ export async function bootstrap() {
   console.log("[vue] vue app bootstraped");
 }
 
+/*暴露监听全局状态变化的方法，让局部组件得意实现局部监听*/
+export let onGlobalStateChange;
+
 export async function mount(props) {
+  onGlobalStateChange = props.onGlobalStateChange;
   console.log("[vue] props from main framework", props);
   VueRender(props);
 }

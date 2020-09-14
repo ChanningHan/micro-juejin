@@ -10147,8 +10147,8 @@ vue-template-es2015-compiler@^1.9.0:
 
 vue-virtual-scroller@^1.0.10:
   version "1.0.10"
-  resolved "http://npm.dm-ai.cn:443/repository/npm/vue-virtual-scroller/-/vue-virtual-scroller-1.0.10.tgz#fdf243240001f05bd79aa77f2e2e60403760e2fb"
-  integrity sha1-/fJDJAAB8FvXmqd/Li5gQDdg4vs=
+  resolved "https://registry.npmjs.org/vue-virtual-scroller/-/vue-virtual-scroller-1.0.10.tgz#fdf243240001f05bd79aa77f2e2e60403760e2fb"
+  integrity sha512-Hn4qSBDhRY4XdngPioYy/ykDjrLX/NMm1fQXm/4UQQ/Xv1x8JbHGFZNftQowTcfICgN7yc31AKnUk1UGLJ2ndA==
   dependencies:
     scrollparent "^2.0.1"
     vue-observe-visibility "^0.4.4"
