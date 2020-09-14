@@ -13,7 +13,7 @@
         style="margin-left: 8px"
       >
         <div class="button-wrapper">
-          <div @click="handleClickArticle">发文章</div>
+          <div @click="handleClickArticle">写文章</div>
         </div>
         <a-menu slot="overlay" style="width:105px;text-align: center">
           <a-menu-item key="0" @click="handleClickBoiling">
