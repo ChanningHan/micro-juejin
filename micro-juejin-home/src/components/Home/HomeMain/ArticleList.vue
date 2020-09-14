@@ -33,7 +33,7 @@ export default {
   },
   async created() {
     onGlobalStateChange(async state => {
-      console.log("局部监听！！！！！！！！！！！！！！！");
+      console.log("监听到滚动到底了！！！！！！！！！！！！！！！");
       if (state.scrollToBottom && !this.loading) {
         this.skeletonNum = 11;
         this.loading = true;

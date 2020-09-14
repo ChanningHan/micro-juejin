@@ -1,5 +1,5 @@
 <template>
-  <div class="BoilingTextArea">
+  <div class="BoilingTextArea boiling_card">
     <div class="textarea_container">
       <a-textarea
         v-model="value"
@@ -9,8 +9,10 @@
       />
       <div
         class="length_count"
-        :style="{color: alowLength >=0 ? '#a3a3a3' : '#dc0816' }"
-      >{{alowLength}}</div>
+        :style="{ color: alowLength >= 0 ? '#a3a3a3' : '#dc0816' }"
+      >
+        {{ alowLength }}
+      </div>
     </div>
     <div class="bottom_container">
       <div class="tool_list">

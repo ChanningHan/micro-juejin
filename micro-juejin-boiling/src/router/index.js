@@ -7,6 +7,16 @@ Vue.use(VueRouter);
 export const routes = [
   {
     path: "/",
+    redirect: "/pins/recommended",
+    name: "Index"
+  },
+  {
+    path: "/pins/:type",
+    name: "Boiling",
+    component: Boiling
+  },
+  {
+    path: "/pins/:topic/:topic_id",
     name: "Boiling",
     component: Boiling
   },

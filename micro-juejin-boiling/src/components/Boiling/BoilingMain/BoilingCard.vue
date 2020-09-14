@@ -1,5 +1,5 @@
 <template>
-  <div class="BoilingCard">
+  <div class="BoilingCard boiling_card">
     <div class="header">
       <img
         :src="boiling.author_user_info.avatar_large | toSmallAvatar"
@@ -18,11 +18,39 @@
       <a-button style="color:#6cbd45;border-color: #6cbd45">关注</a-button>
     </div>
     <div class="main">
-      <p class="content">{{ boiling.msg_Info.content }}</p>
+      <div class="content_wrapper" ref="contentWrapper" style="height: 88px">
+        <p class="content" ref="content">
+          <span>{{ boiling.msg_Info.content }}</span>
+        </p>
+      </div>
+      <a-button
+        type="link"
+        v-if="isOverSize"
+        style="padding-left: 0"
+        @click="handleCollapsed"
+        >{{ isCollapsed ? "展开" : "收起" }}</a-button
+      >
+      <div class="img_list">
+        <a
+          :href="pic"
+          target="_blank"
+          v-for="pic in boiling.msg_Info.pic_list"
+          :key="pic"
+        >
+          <img
+            alt=""
+            :src="pic"
+            :style="{
+              width: boiling.msg_Info.pic_list.length > 1 ? '111px' : '200px',
+              height: boiling.msg_Info.pic_list.length > 1 ? '111px' : '200px'
+            }"
+          />
+        </a>
+      </div>
       <a-button
         shape="round"
         size="small"
-        style="color: #007fff;border-color: #007fff"
+        style="color: #007fff;border-color: #007fff;margin-bottom: 12px"
         v-if="boiling.topic.title"
         ><a
           :href="`https://juejin.im/topic/${boiling.topic.topic_id}`"
@@ -30,18 +58,6 @@
           >{{ boiling.topic.title }}</a
         ></a-button
       >
-      <div class="img_list">
-        <img
-          v-for="pic in boiling.msg_Info.pic_list"
-          :src="pic"
-          alt=""
-          :key="pic"
-          :style="{
-            width: boiling.msg_Info.pic_list.length > 1 ? '111px' : '200px',
-            height: boiling.msg_Info.pic_list.length > 1 ? '111px' : '200px'
-          }"
-        />
-      </div>
     </div>
     <div class="footer">
       <div class="footer_item">
@@ -89,7 +105,31 @@
 
 <script>
 export default {
-  props: ["boiling"]
+  props: ["boiling"],
+  mounted() {
+    if (this.$refs.content.clientHeight > 88) {
+      this.isOverSize = true;
+      this.isCollapsed = true;
+    }
+  },
+  data() {
+    return {
+      isCollapsed: false,
+      isOverSize: false
+    };
+  },
+  methods: {
+    handleCollapsed() {
+      this.isCollapsed = !this.isCollapsed;
+      console.log(this.$refs.content.clientHeight);
+      this.$refs.contentWrapper.style.height = this.isCollapsed
+        ? "88px"
+        : `${this.$refs.content.clientHeight}px`;
+    },
+    test() {
+      console.log(this.$refs.content.clientHeight);
+    }
+  }
 };
 </script>
 
@@ -110,6 +150,7 @@ export default {
       width: 45px;
       object-fit: cover;
       margin-right: 16px;
+      cursor: pointer;
     }
     .author_info {
       flex: 1;
@@ -129,22 +170,33 @@ export default {
   .main {
     text-align: left;
     padding: 0 16px 0 76px;
-
-    .content {
-      white-space: pre-wrap;
-      text-align: left;
-      font-size: 16px;
+    //display: flex;
+    //flex-direction: column;
+    .content_wrapper {
+      height: 88px;
+      overflow: hidden;
+      transition: all 0.3s ease;
+      .content {
+        white-space: pre-wrap;
+        text-align: left;
+        font-size: 15px;
+      }
     }
-    .img_list {
-      margin-top: 16px;
-      padding-left: 8px;
-      display: flex;
 
+    .img_list {
+      //padding-left: 8px;
+      display: flex;
+      padding-left: -16px;
+      flex-wrap: wrap;
       img {
+        cursor: pointer;
         //height: 200px;
         //width: 200px;
         object-fit: cover;
         margin: 8px;
+        &:first-child {
+          margin-left: 0;
+        }
       }
     }
   }
@@ -160,6 +212,7 @@ export default {
       border-right: 1px solid #ddd;
       cursor: pointer;
       position: relative;
+      transform: scale(0.9);
       &:hover {
         &:after {
           content: "";

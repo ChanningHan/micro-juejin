@@ -29,18 +29,23 @@ export default {
 };
 </script>
 
+<style lang="scss">
+#Boiling {
+  .boiling_card {
+    background: #fff;
+    box-shadow: 3px 3px 3px rgba(110, 110, 110, 0.05),
+      -3px -3px 3px rgba(110, 110, 110, 0.05);
+  }
+}
+</style>
 <style lang="scss" scoped>
 #Boiling {
+  width: 960px;
   display: flex;
   justify-content: center;
-  width: 960px;
-}
-
-#Boiling {
-  width: 960px;
-  display: flex;
   padding-top: 64px;
   overflow-x: hidden;
+  position: relative;
   // height: 100%;
 }
 @media screen and (max-width: 980px) {
