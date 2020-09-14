@@ -3,6 +3,10 @@ import App from "./App.vue";
 import router from "./router";
 import store from "./store";
 
+// import "viewerjs/dist/viewer.css";
+// import Viewer from "v-viewer";
+// Vue.use(Viewer);
+
 import "@/filter";
 
 // 按需引入Ant Design 组件
