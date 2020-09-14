@@ -6,6 +6,8 @@ import { routes } from "./router";
 import store from "@/store";
 import "@/filter";
 
+import "@/shared/initLazyLoad";
+
 const packageName = require("../package.json").name;
 
 Vue.config.productionTip = false;
