@@ -1,7 +1,7 @@
-import people from "./people";
+import topic from "@/apis/topic";
 
 const API = {
-  people
+  topic
 };
 
 export default API;

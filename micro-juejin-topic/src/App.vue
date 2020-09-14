@@ -23,6 +23,10 @@ export default {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-  width: 500px;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  background: #fff;
+  min-height: calc(100vh - 64px);
 }
 </style>
