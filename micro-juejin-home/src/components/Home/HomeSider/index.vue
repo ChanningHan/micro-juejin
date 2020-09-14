@@ -38,18 +38,19 @@ export default {
 };
 </script>
 
-<style scoped lang="scss">
+<style lang="scss">
 #HomeSider_container {
   height: 1000px;
   width: 240px;
+  min-width: 240px;
   margin: 0 16px;
-  //margin-left: 16px;
   transition: all 1s;
   transform: scale(1);
 }
-@media screen and (max-width: 900px) {
+@media screen and (max-width: 970px) {
   #HomeSider_container {
     width: 0;
+    min-width: 0;
     opacity: 0;
     margin: 0;
     transform: scale(0);

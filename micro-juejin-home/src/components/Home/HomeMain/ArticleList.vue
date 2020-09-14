@@ -42,11 +42,6 @@ export default {
       }
     });
 
-    // this.skeletonNum = Math.floor(document.body.offsetHeight / 150);
-
-    // document.body.addEventListener("scroll", function() {
-    //   alert("!!!!");
-    // });
 
     this.loading = true;
     await this.$store.dispatch("home/getArticleList");

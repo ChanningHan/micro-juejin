@@ -45,10 +45,8 @@ export default {
 
 <style scoped lang="scss">
 .ArticleCard {
-  //box-shadow: 0 2px 2px rgba(110, 110, 110, 0.55);
   border-bottom: 0.5px solid rgba(110, 110, 110, 0.1);
   padding: 16px 24px;
-  //padding: 0px 24px;
   display: flex;
   height: 116px;
   justify-content: space-between;
@@ -56,6 +54,7 @@ export default {
   background: #fff;
   transition: all 0.3s ease;
   z-index: 1;
+
   &:hover {
     background: rgba(0, 127, 255, 0.1);
     border-bottom: 1.5px solid rgba(110, 110, 110, 0.1);
@@ -65,6 +64,10 @@ export default {
   .ArticleCard_main-wrapper {
     text-align: left;
     flex: 1;
+    margin: 0 8px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
     .ArticleCard_head {
       color: #b2bac2;
       font-size: 12px;
@@ -92,14 +95,15 @@ export default {
       }
     }
     .ArticleCard_title {
-      width: 100%;
+      max-width: 576px;
+      flex: 1;
+      white-space: nowrap;
       overflow: hidden;
       text-overflow: ellipsis;
       span {
         color: #2e3135;
         font-weight: 600;
         font-size: 18px;
-        white-space: nowrap;
       }
     }
     .ArticleCard_action {
@@ -118,13 +122,13 @@ export default {
   }
 
   .ArticleCard_photo {
+    min-width: 60px;
     width: 60px;
     height: 60px;
-    //background: #3a50d6;
     transition: all 1s ease;
     img {
       height: 100%;
-      width: 60px;
+      width: 100%;
       object-fit: cover;
       object-position: center;
     }
@@ -134,13 +138,17 @@ export default {
 @media screen and (max-width: 600px) {
   .ArticleCard_photo {
     opacity: 0;
-    //display: none;
     position: absolute;
     right: 0;
     transform: scale(0) translateX(-500px);
   }
   .ArticleCard_main-wrapper {
-    width: calc(100vw - 150px);
+    max-width: calc(100vw - 48px) !important;
+  }
+}
+@media screen and (max-width: 970px){
+  .ArticleCard_main-wrapper {
+    max-width: calc(100vw - 120px);
   }
 }
 </style>

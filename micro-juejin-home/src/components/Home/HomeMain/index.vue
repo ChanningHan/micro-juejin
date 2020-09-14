@@ -18,7 +18,6 @@ export default {
 
 <style scoped lang="scss">
 #HomeMain_container {
-  //background: #fff;
   flex: 1;
   transition: all 1s;
 }
