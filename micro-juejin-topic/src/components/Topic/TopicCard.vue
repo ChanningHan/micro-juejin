@@ -6,7 +6,7 @@
       target="_blank"
       class="img_wrapper"
     >
-      <img v-lazy="'1https://images.weserv.nl/?url=' + topic.icon" alt="icon" />
+      <img v-lazy="'https://images.weserv.nl/?url=' + topic.icon" alt="icon" />
     </a>
     <div class="content_wrapper">
       <a

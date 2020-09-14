@@ -1,10 +1,7 @@
 <template>
   <div class="BoilingCard boiling_card">
     <div class="header">
-      <img
-        :src="boiling.author_user_info.avatar_large | toSmallAvatar"
-        alt="avatar"
-      />
+      <img v-lazy="smallAvatar" alt="avatar" />
       <div class="author_info">
         <div class="author_username">
           {{ boiling.author_user_info.user_name }}
@@ -117,6 +114,18 @@ export default {
       isCollapsed: false,
       isOverSize: false
     };
+  },
+  computed: {
+    smallAvatar() {
+      const val = this.boiling.author_user_info.avatar_large;
+      return (
+        "https://images.weserv.nl/?url=" +
+        val.replace(
+          /\?.*/g,
+          "?imageView2/1/w/100/h/100/q/85/format/webp/interlace/1"
+        )
+      );
+    }
   },
   methods: {
     handleCollapsed() {

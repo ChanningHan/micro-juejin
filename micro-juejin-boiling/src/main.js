@@ -6,6 +6,7 @@ import { routes } from "./router";
 import store from "@/store";
 import "@/filter";
 import "@/shared/registAntd";
+import "@/shared/initLazyLoad";
 
 const packageName = require("../package.json").name;
 
