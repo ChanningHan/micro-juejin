@@ -31,7 +31,7 @@
       </a-button-group>
     </div>
     <div class="ArticleCard_photo" v-if="article.photo">
-      <img :src="article.photo" alt="" />
+      <img v-lazy="article.photo" alt="" />
     </div>
   </a>
 </template>
