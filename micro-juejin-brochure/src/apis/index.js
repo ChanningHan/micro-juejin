@@ -1,7 +1,7 @@
-import people from "./people";
+import brochure from "./brochure";
 
 const API = {
-  people
+  brochure
 };
 
 export default API;

@@ -1,0 +1,1 @@
+export const SET_BROCHURE_LIST = "SET_BROCHURE_LIST";

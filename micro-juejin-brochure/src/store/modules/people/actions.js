@@ -1,7 +1,7 @@
-import PeopleService from "@/services/PeopleService";
+import BrochureService from "@services/BrochureService";
 import { SET_PEOPLE_LIST } from "@/store/modules/people/mutations-type";
 
-const peopleService = PeopleService.getInstance();
+const peopleService = BrochureService.getInstance();
 
 const actions = {
   getPeopleList: async ({ commit }) => {

@@ -132,19 +132,14 @@ export default {
       switch (this.activeRule) {
         case "/micro-juejin-home":
           return true;
-          break;
         case "/micro-juejin-boiling":
           return this.isCollapsed;
-          break;
         case "/micro-juejin-topic":
-          return true;
-          break;
-        case "/micro-juejin-brochure":
           return false;
-          break;
+        case "/micro-juejin-brochure":
+          return true;
         case "/micro-juejin-activity":
           return false;
-          break;
         default:
           return false;
       }

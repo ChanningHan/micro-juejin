@@ -1,8 +1,11 @@
 <template>
-  <div id="NavBar" :style="{
+  <div
+    id="NavBar"
+    :style="{
       top: showHeader ? '63px' : '0'
       // top: '64px'
-    }">
+    }"
+  >
     <div class="NavBar_container">
       <div class="nav_list">
         <div
@@ -11,12 +14,13 @@
           class="nav_list-item"
           :style="{ color: activeTag === tag ? '#007FFF' : '#71777c' }"
           @click="activeTag = tag"
-        >{{ tag }}</div>
-        
+        >
+          {{ tag }}
+        </div>
       </div>
-      <div class="tag_manage-btn" v-if="activeRule==='/micro-juejin-home'">
+      <div class="tag_manage-btn" v-if="activeRule === '/micro-juejin-home'">
         <a-button type="link">标签管理</a-button>
-        </div>  
+      </div>
     </div>
   </div>
 </template>
@@ -68,6 +72,17 @@ export default {
           "每天一道算法题",
           "开发工具推荐",
           "树洞一下"
+        ],
+        "/micro-juejin-brochure": [
+          "全部",
+          "后端",
+          "前端",
+          "Android",
+          "iOS",
+          "人工智能",
+          "开发工具",
+          "代码人生",
+          "阅读"
         ]
       }
     };
