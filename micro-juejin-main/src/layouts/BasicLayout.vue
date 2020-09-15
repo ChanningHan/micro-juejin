@@ -139,7 +139,7 @@ export default {
         case "/micro-juejin-brochure":
           return true;
         case "/micro-juejin-activity":
-          return false;
+          return true;
         default:
           return false;
       }

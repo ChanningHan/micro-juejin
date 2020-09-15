@@ -8,8 +8,10 @@
         target="_blank"
       >
         <img
-          src="https://user-gold-cdn.xitu.io/2020/2/6/17019b0aa298132e?imageView2/1/w/100/h/100/q/85/format/webp/interlace/1"
-          alt=""
+          v-lazy="
+            'https://user-gold-cdn.xitu.io/2020/2/6/17019b0aa298132e?imageView2/1/w/100/h/100/q/85/format/webp/interlace/1'
+          "
+          alt="avatar"
         />
         <div class="RankList_content-right">
           <div class="RankList_content-name">
@@ -37,8 +39,10 @@
         target="_blank"
       >
         <img
-          src="https://user-gold-cdn.xitu.io/2020/6/29/172fe584f4e4db13?imageView2/1/w/100/h/100/q/85/format/webp/interlace/1"
-          alt=""
+          v-lazy="
+            'https://user-gold-cdn.xitu.io/2020/6/29/172fe584f4e4db13?imageView2/1/w/100/h/100/q/85/format/webp/interlace/1'
+          "
+          alt="avatar"
         />
         <div class="RankList_content-right">
           <div class="RankList_content-name">
@@ -66,8 +70,10 @@
         target="_blank"
       >
         <img
-          src="https://mirror-gold-cdn.xitu.io/16d46f01d783cbf7e0d?imageView2/1/w/100/h/100/q/85/format/webp/interlace/1"
-          alt=""
+          v-lazy="
+            'https://mirror-gold-cdn.xitu.io/16d46f01d783cbf7e0d?imageView2/1/w/100/h/100/q/85/format/webp/interlace/1'
+          "
+          alt="avatar"
         />
         <div class="RankList_content-right">
           <div class="RankList_content-name">

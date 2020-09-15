@@ -5,6 +5,9 @@ import App from "./App.vue";
 import { routes } from "./router";
 import store from "@/store";
 import "@/filter";
+import "@/shared/initLazyLoad";
+
+import "@/shared/registAntd";
 
 const packageName = require("../package.json").name;
 

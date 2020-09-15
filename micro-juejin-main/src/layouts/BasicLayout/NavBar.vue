@@ -3,7 +3,6 @@
     id="NavBar"
     :style="{
       top: showHeader ? '63px' : '0'
-      // top: '64px'
     }"
   >
     <div class="NavBar_container">
@@ -17,10 +16,43 @@
         >
           {{ tag }}
         </div>
+        <a-dropdown v-if="activeRule === '/micro-juejin-activity'">
+          <span style="cursor:pointer;margin-left: 8px">
+            其他 <a-icon type="down" />
+          </span>
+          <a-menu slot="overlay">
+            <a-menu-item
+              v-for="city in cities"
+              :key="city.city_alias"
+              @click="activeTag = city.city_name"
+            >
+              <span>{{ city.city_name }}</span>
+            </a-menu-item>
+          </a-menu>
+        </a-dropdown>
       </div>
-      <div class="tag_manage-btn" v-if="activeRule === '/micro-juejin-home'">
-        <a-button type="link">标签管理</a-button>
-      </div>
+      <a
+        href="https://juejin.im/subscribe/subscribed"
+        target="_blank"
+        class="action_box"
+        v-if="activeRule === '/micro-juejin-home'"
+      >
+        <a-button type="link" class="link_btn">标签管理</a-button>
+      </a>
+      <a
+        href="https://wj.qq.com/s2/6553260/b43b/"
+        target="_blank"
+        class="action_box"
+        v-else-if="activeRule === '/micro-juejin-activity'"
+      >
+        <a-button type="link" class="link_btn">
+          <img
+            alt="icon"
+            src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIzMCIgaGVpZ2h0PSIyNSIgdmlld0JveD0iMCAwIDMwIDI1Ij4KICAgIDxnIGZpbGw9IiM3Mjc3N0IiIGZpbGwtcnVsZT0iZXZlbm9kZCI+CiAgICAgICAgPHBhdGggZD0iTTguMzIgNy4xMTFoMTQuMzZjLjcyOSAwIDEuMzIuNTkxIDEuMzIgMS4zMlYxOC42OEExLjMyIDEuMzIgMCAwIDEgMjIuNjggMjBIOC4zMkExLjMyIDEuMzIgMCAwIDEgNyAxOC42OFY4LjQzMWMwLS43MjkuNTkxLTEuMzIgMS4zMi0xLjMyem0uMDIyIDMuNTU2di44ODloMTQuNzYzdi0uODlIOC4zNDJ6bTIuNjg0IDIuMjIydjMuNTU1aC44OTVWMTIuODloLS44OTV6bTguMDUzIDB2My41NTVoLjg5NVYxMi44OWgtLjg5NXoiLz4KICAgICAgICA8cGF0aCBkPSJNMjAuODY4IDguNDQ0VjUuMzJBMS4zMiAxLjMyIDAgMCAwIDE5LjU0OCA0aC04LjA5NmExLjMyIDEuMzIgMCAwIDAtMS4zMiAxLjMydjMuMTI0aC44OTRWNC44OWg4Ljk0OHYzLjU1NWguODk0eiIvPgogICAgPC9nPgo8L3N2Zz4K"
+          />
+          活动合作</a-button
+        >
+      </a>
     </div>
   </div>
 </template>
@@ -83,8 +115,32 @@ export default {
           "开发工具",
           "代码人生",
           "阅读"
-        ]
-      }
+        ],
+        "/micro-juejin-activity": ["热门活动", "北京", "广州", "深圳", "杭州"]
+      },
+      cities: [
+        { city_alias: "changsha", city_name: "长沙" },
+        { city_alias: "chengdu", city_name: "成都" },
+        { city_alias: "chongqing", city_name: "重庆" },
+        { city_alias: "fuzhou", city_name: "福州" },
+        { city_alias: "haiwai", city_name: "海外" },
+        { city_alias: "hefei", city_name: "合肥" },
+        { city_alias: "nanjing", city_name: "南京" },
+        { city_alias: "qingdao", city_name: "青岛" },
+        { city_alias: "quanguo", city_name: "全国" },
+        { city_alias: "shenyang", city_name: "沈阳" },
+        { city_alias: "shijiazhuang", city_name: "石家庄" },
+        { city_alias: "suzhou", city_name: "苏州" },
+        { city_alias: "taiyuan", city_name: "太原" },
+        { city_alias: "tianjin", city_name: "天津" },
+        { city_alias: "wuhan", city_name: "武汉" },
+        { city_alias: "xiamen", city_name: "厦门" },
+        { city_alias: "xian", city_name: "西安" },
+        { city_alias: "xianggang", city_name: "香港" },
+        { city_alias: "zhengzhou", city_name: "郑州" },
+        { city_alias: "zhuhai", city_name: "珠海" },
+        { city_alias: "buxian", city_name: "不限" }
+      ]
     };
   }
 };
@@ -126,7 +182,15 @@ export default {
         }
       }
     }
-    .tag_manage-btn {
+    .action_box {
+      cursor: pointer;
+      color: #2c3e50;
+      .link_btn {
+        color: #2c3e50;
+        &:hover {
+          color: #007fff;
+        }
+      }
       // min-width: 100px;
       // background-color: #dc0816;
     }
