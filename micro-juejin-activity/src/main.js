@@ -44,7 +44,10 @@ export async function bootstrap() {
   console.log("[vue] vue app bootstraped");
 }
 
+export let onGlobalStateChange;
+
 export async function mount(props) {
+  onGlobalStateChange = props.onGlobalStateChange;
   console.log("[vue] props from main framework", props);
   VueRender(props);
 }

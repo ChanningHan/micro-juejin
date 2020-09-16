@@ -1,6 +1,7 @@
 const axios = require('axios')
 
 const router = require('koa-router')()
+const qs = require('querystring')
 
 
 router.get('/bannerList', async ctx => {
@@ -20,6 +21,7 @@ router.get('/monthStat', async ctx => {
         days: 42,
         from_date: ctx.query.from_date
     })
+
     ctx.body = {
         code: 0,
         data: {
@@ -31,17 +33,41 @@ router.get('/monthStat', async ctx => {
 })
 
 router.get('/activityList', async ctx => {
-    const res = await axios.post('https://apinew.juejin.im/event_api/v1/event/event_list', {
-        "cursor": ctx.query.cursor,
-        "count": ~~ctx.query.limit || 20
-    })
-    ctx.body = {
-        code: 0,
-        data: {
-            cursor: res.data.cursor,
-            list: res.data.data,
-        }
-    }
+    console.log(ctx.query.limit)
+    console.log(ctx.query.cursor)
+    console.log(ctx.query)
+    // ctx.body = {
+    //     data: ctx.query
+    //     // "cursor": ctx.query.cursor,
+    //     // "count": ~~ctx.query.limit || 20
+    // }
+    // return false
+
+   try{
+       const res = await axios.post('https://apinew.juejin.im/event_api/v1/event/event_list',
+           {"count":~~ctx.query.limit || 20,"cursor":~~ctx.query.cursor},{
+           headers:{
+               'Content-Type': 'application/json'
+           },
+       })
+       const list = res.data.data.map(item => {
+           return {
+               ...item,
+               id:item.id + ctx.query.cursor.toString()
+           }
+       })
+       ctx.body = {
+           code: 0,
+           data: {
+               cursor: res.data.cursor,
+               list: list,
+               has_more: res.data.has_more
+           }
+       }
+   }catch (e){
+       console.log('出错了！！！！！！！')
+       // console.log(e)
+   }
 })
 
 

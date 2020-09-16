@@ -33,6 +33,8 @@ export default class ActivityService {
       20,
       ActivityService.instance.cursor
     );
+    console.log("res !!!!!!!");
+    console.log(res);
     ActivityService.instance.cursor = res.cursor;
     ActivityService.instance.has_more = res.has_more;
     return res.list;

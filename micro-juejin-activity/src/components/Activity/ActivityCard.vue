@@ -7,9 +7,7 @@
       />
     </header>
     <main>
-      <span class="title">
-        {{ activity.title }}啊啊啊啊啊案发生的放红烧豆腐安徽省地方接口邯郸发的
-      </span>
+      <span class="title"> {{ activity.id }}{{ activity.title }} </span>
     </main>
     <footer>
       <div class="info_container">
@@ -63,9 +61,11 @@ export default {
   header {
     height: 52%;
     width: 100%;
+    overflow: hidden;
     img {
       height: 100%;
       width: 100%;
+      overflow: hidden;
       object-fit: cover;
       object-position: center;
     }

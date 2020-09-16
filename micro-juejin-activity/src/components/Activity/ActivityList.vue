@@ -9,6 +9,7 @@
 </template>
 
 <script>
+import { onGlobalStateChange } from "@/main";
 import ActivityCard from "@comp/Activity/ActivityCard";
 export default {
   components: {
@@ -16,6 +17,15 @@ export default {
   },
   created() {
     this.getActivityList();
+  },
+  mounted() {
+    onGlobalStateChange(state => {
+      console.log("监听到滚动到底");
+      console.log(state);
+      if (state.scrollToBottom && !this.loading) {
+        this.getActivityList();
+      }
+    });
   },
   computed: {
     activityList() {
