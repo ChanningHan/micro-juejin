@@ -24,7 +24,7 @@ export default {
 <style scoped lang="scss">
 #Activity {
   width: 960px;
-  padding-top: 164px;
+  padding-top: 56px;
   .Activity_header {
     height: 300px;
     display: flex;
@@ -37,6 +37,10 @@ export default {
     .ActivityCalendar_container {
       width: 0px;
       transform: scale(0);
+      margin-left: 0px;
+    }
+    .ADCarousel {
+      width: 100vw;
     }
   }
 }

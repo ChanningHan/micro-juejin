@@ -64,7 +64,6 @@ export default {
   background: #fff;
   overflow: hidden;
   .ADCarousel {
-    width: 100%;
     height: 100%;
     .banner_wrapper {
       height: 300px;

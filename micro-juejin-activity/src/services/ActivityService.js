@@ -13,6 +13,11 @@ export default class ActivityService {
     return ActivityService.instance;
   }
 
+  getMonthStat = async from_date => {
+    const res = await API.activity.getMonthStat(from_date);
+    return res.list;
+  };
+
   getBannerList = async () => {
     const res = await API.activity.getBannerList();
     return res.list;

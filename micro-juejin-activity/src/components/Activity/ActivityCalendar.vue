@@ -19,17 +19,37 @@
           @click="handleChangeMonth(-1)"
         ></a-button>
       </div>
-      <div slot="dateCellRender" slot-scope="value">
-        <a-tooltip arrowPointAtCenter autoAdjustOverflow>
-          <ul slot="title">
-            <li v-for="item in getListData(value)" :key="item.content">
-              {{ item.content }}
+      <div slot="dateCellRender" slot-scope="value" class="calendar_dateCell">
+        <a-tooltip placement="bottomRight">
+          <ul
+            slot="title"
+            v-if="
+              statMap.get(value.format('YYYY-MM-DD')) &&
+                statMap.get(value.format('YYYY-MM-DD')).length > 0
+            "
+            style="margin-left: -32px;"
+            class="calendar_dateCell-eventList"
+          >
+            <li
+              v-for="(item, index) in statMap.get(value.format('YYYY-MM-DD'))"
+              :key="index"
+              style="overflow: hidden;white-space: nowrap;text-overflow: ellipsis;"
+              class="dateCell-eventList-item"
+            >
+              <div
+                style="background: #fff;height: 4px;width: 4px;border-radius: 50%;display: inline-block;margin-bottom: 2px;margin-right: 4px;"
+              ></div>
+              <span>
+                {{ item.title }}
+              </span>
             </li>
           </ul>
           <ul class="events">
-            <template v-for="item in getListData(value)">
-              <li :key="item.content">
-                <a-badge :status="item.type" style="margin: -2px"> </a-badge>
+            <template
+              v-for="(item, index) in statMap.get(value.format('YYYY-MM-DD'))"
+            >
+              <li :key="index">
+                <a-badge status="processing" style="margin: -2px"> </a-badge>
               </li>
             </template>
           </ul>
@@ -40,63 +60,58 @@
 </template>
 
 <script>
+import ActivityService from "@services/ActivityService";
 import moment from "moment";
 moment.locale("zh_CN");
-console.log(moment().toLocaleString());
+
+const activityService = ActivityService.getInstance();
 export default {
   data() {
     return {
-      date: moment()
+      date: moment(),
+      monthStat: []
     };
   },
+  computed: {
+    statMap() {
+      console.log("change!");
+      let statMap = new Map();
+      this.monthStat.forEach(stat => {
+        statMap.set(stat.date, stat.events);
+      });
+      return statMap;
+    }
+  },
+  mounted() {
+    this.getMonthStat();
+  },
   methods: {
+    async getMonthStat() {
+      const firstDayOfMonth = new Date(this.date.format("YYYY-M") + "-1");
+      const preDays = moment(firstDayOfMonth).day() - 1;
+      const from_date = moment(firstDayOfMonth)
+        .subtract(preDays, "days")
+        .format("YYYY-MM-DD");
+      const res = await activityService.getMonthStat(from_date);
+      this.monthStat = res || [];
+      console.log("res");
+      console.log(res);
+    },
     handleChangeMonth(time) {
       const newDate = moment(this.date);
       newDate.subtract(time, "months");
       this.date = newDate;
-    },
-    getListData(value) {
-      let listData;
-      switch (value.date()) {
-        case 8:
-          listData = [
-            { type: "processing", content: "This is warning event." },
-            { type: "processing", content: "This is usual event." }
-          ];
-          break;
-        case 10:
-          listData = [
-            { type: "processing", content: "This is warning event." },
-            { type: "processing", content: "This is usual event." },
-            { type: "processing", content: "This is error event." }
-          ];
-          break;
-        case 15:
-          listData = [
-            { type: "processing", content: "This is warning event" },
-            {
-              type: "processing",
-              content: "This is very long usual event。。...."
-            },
-            { type: "processing", content: "This is error event 1." },
-            { type: "processing", content: "This is error event 2." },
-            { type: "processing", content: "This is error event 3." },
-            { type: "processing", content: "This is error event 4." }
-          ];
-          break;
-        default:
-      }
-      return listData || [];
-    },
-
-    getMonthData(value) {
-      if (value.month() === 8) {
-        return 1394;
-      }
+      this.getMonthStat();
     }
   }
 };
 </script>
+
+<style>
+.dateCell-eventList-item {
+  background: #3a50d6 !important;
+}
+</style>
 
 <style lang="scss">
 .ActivityCalendar {
@@ -106,12 +121,35 @@ export default {
       color: #fff;
     }
   }
+  .ant-fullcalendar-calendar-body {
+    padding: 0;
+    .ant-fullcalendar-selected-day .ant-fullcalendar-value {
+      color: #fff;
+      border-radius: 50%;
+      background: #007fff;
+    }
+  }
 
   .ant-fullcalendar-content {
     position: absolute;
-    bottom: -27px;
+    z-index: 999;
+    //bottom: -27px;
     left: 2px;
     width: 100%;
+    height: 100%;
+    cursor: pointer;
+    //border: 1px solid #2c3e50;
+    .events {
+      height: 40px;
+      margin: 0 !important;
+      padding-top: 18px;
+      &:hover {
+        background: rgba(0, 127, 255, 0.05);
+      }
+      //background: #00dbde;
+      //background: rgba(0, 0, 0, 0.15);
+      //margin-top: 18px !important;
+    }
   }
 }
 </style>
@@ -119,6 +157,7 @@ export default {
 .ActivityCalendar_container {
   width: 476px;
   height: 100%;
+  overflow: hidden;
   background: #fff;
   margin-left: 12px;
   transition: width 0.3s ease, transform 0.3s ease;
@@ -135,6 +174,8 @@ export default {
         color: #007fff;
         font-weight: 600;
       }
+    }
+    .calendar_dateCell {
     }
   }
 }
@@ -159,11 +200,7 @@ export default {
   }
 }
 .events .ant-badge-status {
-  overflow: hidden;
-  white-space: nowrap;
   width: 100%;
-  //text-overflow: ellipsis;
-  font-size: 12px;
 }
 .notes-month {
   text-align: center;
