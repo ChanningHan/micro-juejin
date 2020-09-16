@@ -21,7 +21,6 @@ export default {
   mounted() {
     onGlobalStateChange(state => {
       console.log("监听到滚动到底");
-      console.log(state);
       if (state.scrollToBottom && !this.loading) {
         this.getActivityList();
       }
@@ -41,8 +40,6 @@ export default {
     async getActivityList() {
       this.loading = true;
       const res = await this.$store.dispatch("activity/getActivityList");
-      console.log("getActivityList res");
-      console.log(res);
       if (!res) {
         this.$message.warn("没有更多活动辣");
       }

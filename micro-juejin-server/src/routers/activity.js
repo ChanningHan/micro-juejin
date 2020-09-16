@@ -33,16 +33,6 @@ router.get('/monthStat', async ctx => {
 })
 
 router.get('/activityList', async ctx => {
-    console.log(ctx.query.limit)
-    console.log(ctx.query.cursor)
-    console.log(ctx.query)
-    // ctx.body = {
-    //     data: ctx.query
-    //     // "cursor": ctx.query.cursor,
-    //     // "count": ~~ctx.query.limit || 20
-    // }
-    // return false
-
    try{
        const res = await axios.post('https://apinew.juejin.im/event_api/v1/event/event_list',
            {"count":~~ctx.query.limit || 20,"cursor":~~ctx.query.cursor},{
@@ -66,7 +56,7 @@ router.get('/activityList', async ctx => {
        }
    }catch (e){
        console.log('出错了！！！！！！！')
-       // console.log(e)
+       console.log(e)
    }
 })
 

@@ -7,7 +7,7 @@
       />
     </header>
     <main>
-      <span class="title"> {{ activity.id }}{{ activity.title }} </span>
+      <span class="title"> {{ activity.title }} </span>
     </main>
     <footer>
       <div class="info_container">
