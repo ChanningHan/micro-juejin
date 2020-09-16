@@ -1,5 +1,6 @@
 const state = {
-  peopleList: []
+  bannerList: [],
+  activityList: []
 };
 
 export default state;

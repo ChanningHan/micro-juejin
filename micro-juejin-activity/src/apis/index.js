@@ -1,7 +1,7 @@
-import people from "./people";
+import activity from "@/apis/activity";
 
 const API = {
-  people
+  activity
 };
 
 export default API;
