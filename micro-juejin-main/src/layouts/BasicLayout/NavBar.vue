@@ -12,7 +12,7 @@
           :key="tag"
           class="nav_list-item"
           :style="{ color: activeTag === tag ? '#007FFF' : '#71777c' }"
-          @click="activeTag = tag"
+          @click="handleSelect(tag)"
         >
           {{ tag }}
         </div>
@@ -24,7 +24,7 @@
             <a-menu-item
               v-for="city in cities"
               :key="city.city_alias"
-              @click="activeTag = city.city_name"
+              @click="handleSelect(city.city_name)"
             >
               <span>{{ city.city_name }}</span>
             </a-menu-item>
@@ -58,6 +58,8 @@
 </template>
 
 <script>
+import { state, actions } from "@/shared/subRegister";
+
 export default {
   props: {
     showHeader: {
@@ -76,6 +78,13 @@ export default {
   },
   created() {
     this.activeTag = this.navList && this.navList[0];
+  },
+  methods: {
+    handleSelect(tag) {
+      this.activeTag = tag;
+      state.city = tag;
+      actions.setGlobalState(state)
+    }
   },
   data() {
     return {

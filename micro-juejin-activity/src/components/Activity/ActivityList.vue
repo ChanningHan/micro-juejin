@@ -19,9 +19,14 @@ export default {
     this.getActivityList();
   },
   mounted() {
-    onGlobalStateChange(state => {
-      console.log("监听到滚动到底");
-      if (state.scrollToBottom && !this.loading) {
+    onGlobalStateChange((state, prev) => {
+      console.log("监听到来自qiankun的全局通信");
+
+      if (state.city !== prev.city) {
+        console.log("城市发生变化");
+        console.log(`${prev.city} ====> ${state.city}`);
+        this.getActivityList(state.city);
+      } else if (state.scrollToBottom && !this.loading) {
         this.getActivityList();
       }
     });
@@ -37,9 +42,9 @@ export default {
     };
   },
   methods: {
-    async getActivityList() {
+    async getActivityList(city) {
       this.loading = true;
-      const res = await this.$store.dispatch("activity/getActivityList");
+      const res = await this.$store.dispatch("activity/getActivityList", city);
       if (!res) {
         this.$message.warn("没有更多活动辣");
       }

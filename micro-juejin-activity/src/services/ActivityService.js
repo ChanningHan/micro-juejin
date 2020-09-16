@@ -11,6 +11,7 @@ export default class ActivityService {
       ActivityService.instance = new ActivityService();
       ActivityService.instance.cursor = "0";
       ActivityService.instance.has_more = true;
+      ActivityService.instance.city = void 0;
     }
     return ActivityService.instance;
   }
@@ -25,16 +26,19 @@ export default class ActivityService {
     return res.list;
   };
 
-  getActivityList = async () => {
-    if (!ActivityService.instance.has_more) {
+  getActivityList = async city => {
+    if (city) {
+      ActivityService.instance.city = city;
+      ActivityService.instance.has_more = true;
+      ActivityService.instance.cursor = "0";
+    } else if (!ActivityService.instance.has_more) {
       return false;
     }
     const res = await API.activity.getActivityList(
       20,
-      ActivityService.instance.cursor
+      ActivityService.instance.cursor,
+      ActivityService.instance.city
     );
-    console.log("res !!!!!!!");
-    console.log(res);
     ActivityService.instance.cursor = res.cursor;
     ActivityService.instance.has_more = res.has_more;
     return res.list;

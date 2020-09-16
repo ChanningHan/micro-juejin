@@ -8,7 +8,8 @@ const mutations = {
     state.bannerList = bannerList;
   },
   [SET_ACTIVITY_LIST]: (state, activityList) => {
-    state.activityList = state.activityList.concat(activityList);
+    state.activityList =
+      activityList === null ? [] : state.activityList.concat(activityList);
   }
 };
 

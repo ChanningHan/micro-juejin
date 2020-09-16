@@ -11,8 +11,11 @@ const actions = {
     const res = await activityService.getBannerList();
     commit(SET_BANNER_LIST, res);
   },
-  getActivityList: async ({ commit }) => {
-    const res = await activityService.getActivityList();
+  getActivityList: async ({ commit }, city) => {
+    if (city) {
+      commit(SET_ACTIVITY_LIST, null);
+    }
+    const res = await activityService.getActivityList(city);
     if (res) {
       commit(SET_ACTIVITY_LIST, res);
     }

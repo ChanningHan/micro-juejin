@@ -34,8 +34,13 @@ router.get('/monthStat', async ctx => {
 
 router.get('/activityList', async ctx => {
    try{
-       const res = await axios.post('https://apinew.juejin.im/event_api/v1/event/event_list',
-           {"count":~~ctx.query.limit || 20,"cursor":~~ctx.query.cursor},{
+       const postData = {
+           "count":~~ctx.query.limit || 20,
+           "cursor":~~ctx.query.cursor,
+       }
+       ctx.query.city !=='undefined' && (postData.city = ctx.query.city)
+       const res = await axios.post('https://apinew.juejin.im/event_api/v1/event/event_list',postData
+           ,{
            headers:{
                'Content-Type': 'application/json'
            },
@@ -57,6 +62,12 @@ router.get('/activityList', async ctx => {
    }catch (e){
        console.log('出错了！！！！！！！')
        console.log(e)
+       ctx.body = {
+           code: 500,
+           data: {
+               error:e
+           }
+       }
    }
 })
 

@@ -93,13 +93,15 @@ runAfterFirstMounted(() => {
 // 初始化 state
 export const state = {
   testAttr: "Hi Channing",
-  scrollToBottom: false
+  scrollToBottom: false,
+  city: "热门活动"
 };
 export const actions = initGlobalState(state);
 actions.onGlobalStateChange((state, prev) => {
   // state: 变更后的状态; prev 变更前的状态
   console.log("主应用全局监听到state发生变化!!!!!!!!!!!!!!!!!!!!!!!!!!");
-  console.log(state, prev);
+  console.log("state", state);
+  console.log("prev", prev);
 });
 state.testAttr = "Hi Channing again!!!!!!!";
 actions.setGlobalState(state);

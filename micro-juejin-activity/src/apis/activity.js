@@ -9,8 +9,10 @@ const activity = {
     http.get(`/activity/monthStat?from_date=${from_date}`),
 
   // 获取活动列表
-  getActivityList: (limit, cursor) => {
-    return http.get(`/activity/activityList?limit=${limit}&cursor=${cursor}`);
+  getActivityList: (limit, cursor, city) => {
+    return http.get(
+      `/activity/activityList?limit=${limit}&cursor=${cursor}&city=${city}`
+    );
   }
 };
 
