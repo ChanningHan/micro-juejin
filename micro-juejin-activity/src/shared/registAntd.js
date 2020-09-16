@@ -23,7 +23,10 @@ import {
   Menu,
   Dropdown,
   Carousel,
-  Skeleton
+  Skeleton,
+  Calendar,
+  Badge,
+  Popover
 } from "ant-design-vue";
 //
 Vue.prototype.$notification = notification;
@@ -39,7 +42,10 @@ const components = [
   Menu,
   Dropdown,
   Carousel,
-  Skeleton
+  Skeleton,
+  Calendar,
+  Badge,
+  Popover
 ];
 register(components);
 

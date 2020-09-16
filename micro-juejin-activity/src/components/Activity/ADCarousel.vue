@@ -6,8 +6,7 @@
         :dotPosition="'bottom'"
         class="ADCarousel"
         effect="fade"
-        style="transition: all 1s ease;"
-        :autoplaySpeed="15000000"
+        :autoplaySpeed="1500"
         :dotsClass="'carousel_dots'"
       >
         <div v-for="banner in list" :key="banner.id" class="banner_wrapper">
@@ -68,7 +67,7 @@ export default {
     width: 100%;
     height: 100%;
     .banner_wrapper {
-      height: 281px;
+      height: 300px;
       width: 100%;
       img {
         height: 100%;

@@ -2,6 +2,7 @@ const CompressionWebpackPlugin = require("compression-webpack-plugin");
 const proxy = require("./vue.config.proxy");
 const webpack = require("webpack");
 const path = require("path");
+const MomentLocalesPlugin = require("moment-locales-webpack-plugin");
 
 const packageName = require("./package.json").name;
 
@@ -76,7 +77,10 @@ module.exports = {
     plugins: [
       // Ignore all locale files of moment.js
       // 去掉本地化文件减少moment打包体积
-      new webpack.IgnorePlugin(/^\.\/locale$/, /moment$/),
+      new MomentLocalesPlugin({
+        localesToKeep: ["zh_CN"]
+      }),
+      // new webpack.IgnorePlugin([/^\.\/locale$/], /moment$/),
       new webpack.DefinePlugin({
         __CHANNING_package_name__: JSON.stringify(packageName)
       })

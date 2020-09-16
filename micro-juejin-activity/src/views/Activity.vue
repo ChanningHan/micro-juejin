@@ -26,7 +26,7 @@ export default {
   width: 960px;
   padding-top: 164px;
   .Activity_header {
-    height: 281px;
+    height: 300px;
     display: flex;
   }
 }
