@@ -9,7 +9,7 @@
       >
         <img
           v-lazy="
-            'https://user-gold-cdn.xitu.io/2020/2/6/17019b0aa298132e?imageView2/1/w/100/h/100/q/85/format/webp/interlace/1'
+            'https://images.weserv.nl/?url=https://user-gold-cdn.xitu.io/2020/2/6/17019b0aa298132e?imageView2/1/w/100/h/100/q/85/format/webp/interlace/1'
           "
           alt="avatar"
         />
@@ -40,7 +40,7 @@
       >
         <img
           v-lazy="
-            'https://user-gold-cdn.xitu.io/2020/6/29/172fe584f4e4db13?imageView2/1/w/100/h/100/q/85/format/webp/interlace/1'
+            'https://images.weserv.nl/?url=https://user-gold-cdn.xitu.io/2020/6/29/172fe584f4e4db13?imageView2/1/w/180/h/180/q/85/format/webp/interlace/1'
           "
           alt="avatar"
         />
