@@ -30,6 +30,19 @@ router.get('/monthStat', async ctx => {
     }
 })
 
+router.get('/activityList', async ctx => {
+    const res = await axios.post('https://apinew.juejin.im/event_api/v1/event/event_list', {
+        "cursor": ctx.query.cursor,
+        "count": ~~ctx.query.limit || 20
+    })
+    ctx.body = {
+        code: 0,
+        data: {
+            cursor: res.data.cursor,
+            list: res.data.data,
+        }
+    }
+})
 
 
 

@@ -160,7 +160,7 @@ export default {
   overflow: hidden;
   background: #fff;
   margin-left: 12px;
-  transition: width 0.3s ease, transform 0.3s ease;
+  //transition: width 0.3s ease, transform 0.3s ease;
 
   .ActivityCalendar {
     //height: 251px;

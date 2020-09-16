@@ -13,7 +13,10 @@ const actions = {
   },
   getActivityList: async ({ commit }) => {
     const res = await activityService.getActivityList();
-    commit(SET_ACTIVITY_LIST, res);
+    if (res) {
+      commit(SET_ACTIVITY_LIST, res);
+    }
+    return res;
   }
 };
 

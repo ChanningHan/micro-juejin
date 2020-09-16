@@ -9,7 +9,8 @@ const activity = {
     http.get(`/activity/monthStat?from_date=${from_date}`),
 
   // 获取活动列表
-  getActivityList: () => http.get("/activity/ActivityList")
+  getActivityList: (limit, cursor) =>
+    http.get(`/activity/ActivityList?limit=${limit}$cursor=${cursor}`)
 };
 
 export default activity;

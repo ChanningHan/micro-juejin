@@ -1,8 +1,8 @@
 <template>
   <div id="Activity">
     <div class="Activity_header">
-      <ADCarousel></ADCarousel>
-      <ActivityCalendar></ActivityCalendar>
+      <ADCarousel class="shadow_card"></ADCarousel>
+      <ActivityCalendar class="shadow_card"></ActivityCalendar>
     </div>
     <ActivityList></ActivityList>
   </div>
@@ -20,7 +20,16 @@ export default {
   }
 };
 </script>
-
+<style lang="scss">
+#Activity {
+  .shadow_card {
+    box-shadow: 2px 2px 2px rgba(110, 110, 110, 0.15);
+    &:hover {
+      box-shadow: 6px 6px 6px rgba(110, 110, 110, 0.1);
+    }
+  }
+}
+</style>
 <style scoped lang="scss">
 #Activity {
   width: 960px;
@@ -41,6 +50,29 @@ export default {
     }
     .ADCarousel {
       width: 100vw;
+    }
+    .ActivityCard {
+      width: 32vw;
+      //height: 36.7vw;
+      height: max-content;
+    }
+  }
+}
+@media screen and(max-width: 725px) {
+  #Activity {
+    .ActivityCard {
+      width: 49vw;
+      //height: 56.2vw;
+      height: max-content;
+    }
+  }
+}
+@media screen and(max-width: 510px) {
+  #Activity {
+    .ActivityCard {
+      width: 100vw;
+      //height: 114.8vw;
+      height: max-content;
     }
   }
 }

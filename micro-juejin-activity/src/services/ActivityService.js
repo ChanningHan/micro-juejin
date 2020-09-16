@@ -9,6 +9,8 @@ export default class ActivityService {
   static getInstance() {
     if (!ActivityService.instance) {
       ActivityService.instance = new ActivityService();
+      ActivityService.instance.cursor = "0";
+      ActivityService.instance.has_more = true;
     }
     return ActivityService.instance;
   }
@@ -24,7 +26,15 @@ export default class ActivityService {
   };
 
   getActivityList = async () => {
-    const res = await API.activity.getActivityList();
+    if (!ActivityService.instance.has_more) {
+      return false;
+    }
+    const res = await API.activity.getActivityList(
+      20,
+      ActivityService.instance.cursor
+    );
+    ActivityService.instance.cursor = res.cursor;
+    ActivityService.instance.has_more = res.has_more;
     return res.list;
   };
 }
