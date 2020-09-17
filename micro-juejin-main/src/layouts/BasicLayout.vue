@@ -76,9 +76,10 @@
       ref="BasicLayout_content"
       @scroll="handleScroll"
     >
+      <Loading class="BasicLayout_loading" v-show="isLoadingMicro"></Loading>
       <transition name="subApp_fade">
         <div id="subApp" ref="subApp" v-show="!switchingApp">
-          Micro App
+          <!--          Micro App-->
           <router-view />
         </div>
       </transition>
@@ -97,6 +98,7 @@ import WriteButton from "@layouts/BasicLayout/WriteButton";
 import BellBadge from "@layouts/BasicLayout/BellBadge";
 import UserAvatar from "@layouts/BasicLayout/UserAvatar";
 import NavBar from "@layouts/BasicLayout/NavBar";
+import Loading from "@/components/common/Loading";
 import { actions, state } from "@/shared/subRegister";
 
 export default {
@@ -105,18 +107,20 @@ export default {
     WriteButton,
     BellBadge,
     UserAvatar,
-    NavBar
+    NavBar,
+    Loading
   },
   data() {
     return {
+      isLoadingMicro: true,
+      switchingApp: false,
       apps,
       activeRule: void 0,
       ruleMap: new Map(),
       screenWidth: document.body.clientWidth,
       // isCollapsed: false,
       scrollTop: 0,
-      showHeader: true,
-      switchingApp: false
+      showHeader: true
     };
   },
   computed: {
@@ -156,6 +160,8 @@ export default {
         await this.$router.push(activeRule);
         this.switchingApp = false;
       }, 500);
+      // setTimeout(() => {
+      // }, 500);
     },
     handleScroll(e) {
       const { clientHeight, scrollHeight, scrollTop } = e.target;
@@ -195,6 +201,20 @@ export default {
       500,
       false
     );
+
+    // 监听微应用加载状态
+    actions.onGlobalStateChange(state => {
+      console.log("BasicLayout 监听到全局状态变化");
+      console.log(state);
+      if (!state.isLoadingMicro) {
+        setTimeout(() => {
+          this.isLoadingMicro = state.isLoadingMicro;
+        }, 500);
+      } else {
+        this.isLoadingMicro = state.isLoadingMicro;
+      }
+      // this.isLoadingMicro = state.isLoadingMicro;
+    });
   }
 };
 </script>
@@ -252,6 +272,11 @@ export default {
     overflow-y: auto;
     overflow-x: hidden;
     text-align: center;
+    .BasicLayout_loading {
+      position: absolute;
+      top: 45vh;
+      left: 45vw;
+    }
     #subApp {
       width: 100%;
       display: flex;
@@ -303,7 +328,7 @@ export default {
 .head_fade-leave-active,
 .menu_fade-enter-active,
 .menu_fade-leave-active {
-  transition: all 0.5s cubic-bezier(0.54, 0.05, 0.29, 2);
+  transition: all 0.3s cubic-bezier(0.54, 0.05, 0.29, 2);
 }
 
 .subApp_fade-enter,
@@ -313,6 +338,7 @@ export default {
 }
 .subApp_fade-enter-active,
 .subApp_fade-leave-active {
-  transition: all 0.5s cubic-bezier(0.54, 0.05, 0.29, 2);
+  transition: all 0.5s cubic-bezier(0.54, 0.05, 0.29, 1.7);
+  //transition: all 0.1s ease;
 }
 </style>

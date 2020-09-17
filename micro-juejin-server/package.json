@@ -4,6 +4,7 @@
     "koa": "^2.13.0",
     "koa-bodyparser": "^4.3.0",
     "koa-router": "^9.4.0",
+    "koa-static": "^5.0.0",
     "koa2-cors": "^2.0.6",
     "mockjs": "^1.1.0",
     "querystring": "^0.2.0",

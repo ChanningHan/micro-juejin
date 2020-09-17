@@ -20,6 +20,7 @@ proxyConfigs.forEach((config, index) => {
   proxy[key] = config;
 });
 
+
 /*主应用的代理*/
 proxy["/api"] = {
   ...baseConfig,

@@ -1,11 +1,19 @@
 const Koa = require('koa')
 const bodyParser = require('koa-bodyparser')
 const cors = require('koa2-cors')
+const path = require('path')
+
+const koaStatic = require('koa-static')
+
 
 const router = require('./src/routers/index')
 
 const app = new Koa()
 
+// 配置静态资源中间件
+app.use(koaStatic(
+    path.join(__dirname, 'dist')
+))
 
 // 跨域中间件
 app.use(cors({
@@ -26,10 +34,6 @@ app.use(cors({
 }))
 
 app.use(bodyParser()) //post解析中间件
-
-
-
-
 
 
 app.use(router.routes()); //作用：启动路由

@@ -12,10 +12,15 @@
  * @$meta 可选，不是注册微应用必须的，是我在这个主应用中为了给Header的菜单项提供title而添加的，为了区别这是一个私有参数以及避免冲突在前面加了'$'
  *
  * */
+
+console.log("process.env.VUE_APP_BACKEND");
+console.log(process.env.VUE_APP_BACKEND);
+const prdHost = process.env.VUE_APP_BACKEND;
+
 const apps = [
   {
     name: "micro-juejin-home",
-    entry: "//localhost:8071",
+    entry: `//${prdHost || "localhost"}:8071`,
     container: "#subApp",
     activeRule: "/micro-juejin-home",
     $meta: {
@@ -24,7 +29,7 @@ const apps = [
   },
   {
     name: "micro-juejin-boiling",
-    entry: "//localhost:8072",
+    entry: `//${prdHost || "localhost"}:8072`,
     container: "#subApp",
     activeRule: "/micro-juejin-boiling",
     $meta: {
@@ -33,7 +38,7 @@ const apps = [
   },
   {
     name: "micro-juejin-topic",
-    entry: "//localhost:8073",
+    entry: `//${prdHost || "localhost"}:8073`,
     container: "#subApp",
     activeRule: "/micro-juejin-topic",
     $meta: {
@@ -42,7 +47,7 @@ const apps = [
   },
   {
     name: "micro-juejin-brochure",
-    entry: "//localhost:8074",
+    entry: `//${prdHost || "localhost"}:8074`,
     container: "#subApp",
     activeRule: "/micro-juejin-brochure",
     $meta: {
@@ -51,7 +56,7 @@ const apps = [
   },
   {
     name: "micro-juejin-activity",
-    entry: "//localhost:8075",
+    entry: `//${prdHost || "localhost"}:8075`,
     container: "#subApp",
     activeRule: "/micro-juejin-activity",
     $meta: {

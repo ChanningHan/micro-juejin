@@ -94,7 +94,8 @@ runAfterFirstMounted(() => {
 export const state = {
   testAttr: "Hi Channing",
   scrollToBottom: false,
-  city: "热门活动"
+  city: "热门活动",
+  isLoadingMicro: true
 };
 export const actions = initGlobalState(state);
 actions.onGlobalStateChange((state, prev) => {
