@@ -338,7 +338,7 @@ export default {
 }
 .subApp_fade-enter-active,
 .subApp_fade-leave-active {
-  transition: all 0.5s cubic-bezier(0.54, 0.05, 0.29, 1.7);
+  transition: all 0.5s cubic-bezier(0.54, 0.05, 0.29, 1);
   //transition: all 0.1s ease;
 }
 </style>
