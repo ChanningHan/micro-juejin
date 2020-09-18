@@ -1,5 +1,6 @@
 <template>
   <div id="HomeMain_container">
+    <a-button @click="getToken">GET_TOKEN</a-button>
     <NavTabs></NavTabs>
     <ArticleList></ArticleList>
   </div>
@@ -12,6 +13,15 @@ export default {
   components: {
     NavTabs,
     ArticleList
+  },
+  methods: {
+    getToken() {
+      console.log("get token");
+      console.log(localStorage.getItem("test_token"));
+      console.log('_______________')
+      console.log('get cookie')
+      console.log(document.cookie)
+    }
   }
 };
 </script>

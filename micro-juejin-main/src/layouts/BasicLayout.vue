@@ -174,6 +174,8 @@ export default {
     }
   },
   created() {
+    document.cookie = 'test_cookie="I am a cookie"'
+    localStorage.setItem("test_token", "I am Channing");
     this.apps.forEach(app => {
       this.ruleMap.set(app.activeRule, app.$meta.title);
     });
