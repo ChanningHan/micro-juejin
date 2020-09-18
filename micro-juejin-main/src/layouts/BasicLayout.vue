@@ -2,6 +2,8 @@
   <a-layout class="BasicLayout_container">
     <transition name="head_fade">
       <a-layout-header class="BasicLayout_header" v-show="showHeader">
+        {{ isLoadingMicro }}
+
         <div class="BasicLayout_header_container">
           <transition
             name="menu_fade"
@@ -167,6 +169,9 @@ export default {
       const { clientHeight, scrollHeight, scrollTop } = e.target;
       if (scrollHeight - scrollTop === clientHeight) {
         state.scrollToBottom = true;
+        state.isLoadingMicro = false;
+        console.log('state!!!!!!!!!!!!!!!!!')
+        console.log(state)
         actions.setGlobalState(state);
       }
       this.scrollTop = e.target.scrollTop;
