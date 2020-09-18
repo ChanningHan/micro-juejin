@@ -207,14 +207,7 @@ export default {
     actions.onGlobalStateChange(state => {
       console.log("BasicLayout 监听到全局状态变化");
       console.log(state);
-      if (!state.isLoadingMicro) {
-        setTimeout(() => {
-          this.isLoadingMicro = state.isLoadingMicro;
-        }, 500);
-      } else {
-        this.isLoadingMicro = state.isLoadingMicro;
-      }
-      // this.isLoadingMicro = state.isLoadingMicro;
+      this.isLoadingMicro = state.isLoadingMicro;
     });
   }
 };

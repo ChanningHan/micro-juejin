@@ -95,7 +95,7 @@ export const state = {
   testAttr: "Hi Channing",
   scrollToBottom: false,
   city: "热门活动",
-  isLoadingMicro: true
+  isLoadingMicro: false
 };
 export const actions = initGlobalState(state);
 actions.onGlobalStateChange((state, prev) => {
@@ -105,5 +105,6 @@ actions.onGlobalStateChange((state, prev) => {
   console.log("prev", prev);
 });
 state.testAttr = "Hi Channing again!!!!!!!";
+state.isLoadingMicro = true;
 actions.setGlobalState(state);
 actions.offGlobalStateChange();

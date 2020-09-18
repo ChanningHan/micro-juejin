@@ -87,8 +87,13 @@ export default {
   methods: {
     handleSelect(tag) {
       this.activeTag = tag;
-      state.city = tag;
-      actions.setGlobalState(state);
+      const tempState = {
+        ...state,
+        city: tag,
+        isLoadingMicro: false
+      };
+      tempState.city = tag;
+      actions.setGlobalState(tempState);
     }
   },
   data() {
