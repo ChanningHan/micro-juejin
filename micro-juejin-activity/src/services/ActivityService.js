@@ -28,6 +28,7 @@ export default class ActivityService {
 
   getActivityList = async city => {
     if (city) {
+      city = city === "热门活动" ? void 0 : city;
       ActivityService.instance.city = city;
       ActivityService.instance.has_more = true;
       ActivityService.instance.cursor = "0";
