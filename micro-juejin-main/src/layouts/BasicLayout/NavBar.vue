@@ -167,7 +167,8 @@ export default {
 
 <style lang="scss">
 #NavBar {
-  transition: top 0.5s cubic-bezier(0.65, -1.51, 0.41, 2.43), opacity 0.5s;
+  //transition: top 0.5s cubic-bezier(0.65, -1.51, 0.41, 2.43), opacity 0.5s;
+  transition: top 0.5s ease, opacity 0.5s ease;
   background: #fff;
   width: 100vw;
   border-top: 1px solid #e3e3e3;

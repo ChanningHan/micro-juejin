@@ -315,11 +315,18 @@ export default {
 
 .head_fade-enter,
 .head_fade-leave-to {
-  transform: rotateX(90deg) perspective(100px) translateZ(50px);
+  //transform: rotateX(90deg) perspective(100px) translateZ(50px);
+  opacity: 0;
+  transform: translateY(-63px);
 }
 
 .head_fade-enter-active,
-.head_fade-leave-active,
+.head_fade-leave-active {
+  //transition: transform 0.5s cubic-bezier(0.65, -1.51, 0.41, 2.43), opacity 0.5s;
+  transition: transform 0.5s ease, opacity 0.5s;
+}
+
+
 .menu_fade-enter-active,
 .menu_fade-leave-active {
   transition: all 0.3s cubic-bezier(0.54, 0.05, 0.29, 2);

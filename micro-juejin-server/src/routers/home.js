@@ -55,7 +55,7 @@ router.get('/articleList', async (ctx) => {
     await new Promise(resolve => {
         setTimeout(() => {
             resolve()
-        }, 1500)
+        }, 500)
     })
 
 
