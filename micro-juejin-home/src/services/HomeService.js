@@ -16,9 +16,7 @@ export default class HomeService {
 
   getArticleList = async num => {
     const res = await API.home.getArticleList(num, HomeService.instance.cursor);
-    console.log("res.rawList!!!!!!!!!!!!!!!!");
     HomeService.instance.cursor = res.cursor;
-    console.log(HomeService.instance.cursor);
     return res.list;
   };
 }

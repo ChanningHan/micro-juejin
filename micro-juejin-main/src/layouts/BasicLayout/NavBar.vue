@@ -79,11 +79,16 @@ export default {
   created() {
     this.activeTag = this.navList && this.navList[0];
   },
+  watch: {
+    activeRule() {
+      this.activeTag = this.navList && this.navList[0];
+    }
+  },
   methods: {
     handleSelect(tag) {
       this.activeTag = tag;
       state.city = tag;
-      actions.setGlobalState(state)
+      actions.setGlobalState(state);
     }
   },
   data() {
