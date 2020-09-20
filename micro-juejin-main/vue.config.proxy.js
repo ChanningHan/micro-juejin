@@ -15,17 +15,21 @@ const proxyConfigs = apps.map(app => {
 });
 
 proxyConfigs.forEach((config, index) => {
-  // const key = "/api/api-" + apps[index].name + "-api";
+  // if (index === 5) {
+  //   return;
+  // }
   const key = "/api/" + apps[index].name;
   proxy[key] = config;
 });
 
-
 /*主应用的代理*/
-proxy["/api"] = {
-  ...baseConfig,
-  target: process.env.BACKEND || "http://localhost:3001"
-};
+// proxy["/api"] = {
+//   ...baseConfig,
+//   target: process.env.BACKEND || "http://localhost:3001"
+// };
+
+console.log("proxy");
+console.log(proxy);
 
 module.exports = proxy;
 // module.exports = {

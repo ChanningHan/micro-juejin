@@ -4,7 +4,7 @@
   <p>Edit <code>components/HelloWorld.vue</code> to test hot module replacement.</p>
   <hr>
   <h2>PeopleList</h2>
-  <button @click="fetchPeopleList">CLICK ME ！！！</button>
+  <button @click="fetchPeopleList">CLICK ME ！！！</button>（异步请求的代理还没有弄好，在微应用里面就别点了）
   <Loading v-if="loading || isEmpty" :msg="loadingMsg"></Loading>
     <div
         v-for="people in peopleList"
@@ -21,7 +21,6 @@
 
 <script>
 import Loading from '../components/Loading.vue'
-import {ref,computed} from "vue"
 import usePeopleList from "../composables/usePeopleList";
 
 export default {
@@ -44,9 +43,6 @@ export default {
   },
 
   name: 'HelloWorld',
-  created() {
-    // this.fetchPeopleList()
-  },
   props: {
     msg: String
   },

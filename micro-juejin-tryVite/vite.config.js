@@ -1,16 +1,12 @@
 const port = 8076
 
-const publicPath = '//localhost:3000/'
+// const publicPath = '//localhost:3000/'
 
 
 export default  {
     port,
-    base: publicPath,
+    base: '//www.channing-bbs.club:8076/',
     proxy: {
-        // '/api': {
-        //     target: 'http://localhost:3000',
-        //     changeOrigin: true,
-        // },
         '/api/micro-juejin-tryVite': {
             target: 'http://localhost:3000',
             changeOrigin: true,
