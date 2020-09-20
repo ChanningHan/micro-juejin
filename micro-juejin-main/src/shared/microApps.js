@@ -62,6 +62,15 @@ const apps = [
     $meta: {
       title: "活动"
     }
+  },
+  {
+    name: "micro-juejin-tryVite",
+    entry: `//${prdHost || "localhost"}:3000`,
+    container: "#subApp",
+    activeRule: "/micro-juejin-tryVite",
+    $meta: {
+      title: "tryVite"
+    }
   }
 ];
 
