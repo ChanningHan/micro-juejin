@@ -1,6 +1,6 @@
 <template>
   <div id="HomeMain_container">
-    <a-button @click="getToken">GET_TOKEN</a-button>
+    <a-button @click="getToken" v-if="false">GET_TOKEN</a-button>
     <NavTabs></NavTabs>
     <ArticleList></ArticleList>
   </div>

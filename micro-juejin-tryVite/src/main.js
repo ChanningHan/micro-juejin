@@ -21,18 +21,34 @@ if (!window.__POWERED_BY_QIANKUN__) {
     });
 }
 
+
+export let onGlobalStateChange;
+export let setGlobalState;
+
+
 (global => {
     global['purehtml'] = {
-        bootstrap: () => {
+        bootstrap: (props) => {
+
             console.log('Vite App  bootstrap');
             return Promise.resolve();
         },
         mount: (props) => {
             console.log('Vite App mount');
+            onGlobalStateChange = props.onGlobalStateChange;
+            setGlobalState = props.setGlobalState;
+
+            //这里加载完毕后可以改变全局的状态通知主应用让其Loading组件消失
+            setGlobalState({ isLoadingMicro: false });
+
             return VueRender(props);
         },
         unmount: () => {
             console.log('Vite App unmount');
+
+            // //这里微应用注销后通知主应用让其Loading组件出现
+            setGlobalState({ isLoadingMicro: true });
+
             return Promise.resolve();
         },
     };
