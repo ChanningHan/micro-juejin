@@ -4,7 +4,8 @@
   <p>Edit <code>components/HelloWorld.vue</code> to test hot module replacement.</p>
   <hr>
   <h2>PeopleList</h2>
-  <button @click="fetchPeopleList">CLICK ME ！！！</button>（异步请求的代理还没有弄好，在微应用里面就别点了）
+  <p style="color: #a3a3a3">(开发环境还在研究跨域...)</p>
+  <button @click="fetchPeopleList">CLICK ME ！！！</button>
   <Loading v-if="loading || isEmpty" :msg="loadingMsg"></Loading>
     <div
         v-for="people in peopleList"
