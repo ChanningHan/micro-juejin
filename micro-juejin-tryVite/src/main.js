@@ -2,6 +2,8 @@ import { createApp } from 'vue'
 import App from './App.vue'
 import "./index.css"
 
+import axios from "axios"
+
 // import "./public-path";
 
 
@@ -53,3 +55,8 @@ export let setGlobalState;
         },
     };
 })(window);
+
+axios('/api/micro-juejin-tryVite/people/list').then(res=>{
+    console.log('fetch res')
+    console.log(res)
+})
