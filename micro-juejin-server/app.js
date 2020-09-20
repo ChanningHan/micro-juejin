@@ -10,10 +10,7 @@ const router = require('./src/routers/index')
 
 const app = new Koa()
 
-// 配置静态资源中间件
-app.use(koaStatic(
-    path.join(__dirname, 'dist')
-))
+
 
 // 跨域中间件
 app.use(cors({
@@ -32,6 +29,11 @@ app.use(cors({
     allowMethods: ['GET', 'POST', 'PUT', 'DELETE'],
     allowHeaders: ['Content-Type', 'Authorization', 'Accept'],
 }))
+
+// 配置静态资源中间件
+app.use(koaStatic(
+    path.join(__dirname, 'dist')
+))
 
 app.use(bodyParser()) //post解析中间件
 
