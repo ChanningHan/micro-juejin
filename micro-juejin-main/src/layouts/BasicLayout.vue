@@ -283,8 +283,6 @@ export default {
       top: 0;
       bottom: 0;
       margin: auto;
-      //top: 45vh;
-      //left: 45vw;
     }
     #subApp {
       width: 100%;
