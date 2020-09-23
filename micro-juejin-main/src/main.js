@@ -12,13 +12,15 @@ import "@/filter";
 // 按需引入Ant Design 组件
 import "@/shared/registAntd";
 
-// 注册微应用
-import "./shared/subRegister";
+// 注册微应用相关
+import subRegister from "./shared/subRegister";
 
 Vue.config.productionTip = false;
 
-new Vue({
+const vm = new Vue({
   router,
   store,
   render: h => h(App)
 }).$mount("#main_app");
+
+subRegister(vm);

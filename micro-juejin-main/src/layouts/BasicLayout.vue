@@ -1,5 +1,6 @@
 <template>
   <a-layout class="BasicLayout_container">
+
     <transition name="head_fade">
       <a-layout-header class="BasicLayout_header" v-show="showHeader">
         <div class="BasicLayout_header_container">
@@ -63,6 +64,7 @@
       </a-layout-header>
     </transition>
 
+
     <transition name="ease_fade">
       <NavBar
         v-if="showNavBar"
@@ -76,7 +78,8 @@
       ref="BasicLayout_content"
       @scroll="handleScroll"
     >
-      <Loading class="BasicLayout_loading" v-show="isLoadingMicro"></Loading>
+
+      <Loading class="BasicLayout_loading" v-show="isLoading"></Loading>
       <transition name="subApp_fade">
         <div id="subApp" ref="subApp" v-show="!switchingApp">
           <!--          Micro App-->
@@ -85,12 +88,14 @@
       </transition>
     </a-layout-content>
 
+
     <a-layout-footer class="BasicLayout_footer">
       Created By Channing
     </a-layout-footer>
   </a-layout>
 </template>
 <script>
+import { mapState } from "vuex";
 import apps from "@/shared/microApps";
 import { debounce, throttle } from "@/shared/util";
 import SearchInput from "./BasicLayout/SearchInput";
@@ -124,6 +129,7 @@ export default {
     };
   },
   computed: {
+    ...mapState(["isLoading"]),
     currentTitle() {
       return this.activeRule
         ? this.ruleMap.get(this.activeRule)
@@ -174,7 +180,7 @@ export default {
     }
   },
   created() {
-    document.cookie = 'test_cookie="I am a cookie"'
+    document.cookie = 'test_cookie="I am a cookie"';
     localStorage.setItem("test_token", "I am Channing");
     this.apps.forEach(app => {
       this.ruleMap.set(app.activeRule, app.$meta.title);
@@ -327,7 +333,6 @@ export default {
   //transition: transform 0.5s cubic-bezier(0.65, -1.51, 0.41, 2.43), opacity 0.5s;
   transition: transform 0.5s ease, opacity 0.5s;
 }
-
 
 .menu_fade-enter-active,
 .menu_fade-leave-active {

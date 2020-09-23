@@ -17,6 +17,8 @@ console.log("process.env.VUE_APP_BACKEND");
 console.log(process.env.VUE_APP_BACKEND);
 const prdHost = process.env.VUE_APP_BACKEND;
 
+
+
 const apps = [
   {
     name: "micro-juejin-home",

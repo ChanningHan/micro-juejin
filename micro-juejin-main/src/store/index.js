@@ -6,8 +6,13 @@ import peopleStore from "@/store/modules/people";
 Vue.use(Vuex);
 
 export default new Vuex.Store({
-  state: {},
-  mutations: {},
+  state: { isLoading: false },
+  mutations: {
+    loadingToggle: (state, loading) => {
+      state.isLoading = loading;
+      console.log("loadingToggle~~~~~~~~~~~~~~~~~~",loading);
+    }
+  },
   actions: {},
   modules: { people: peopleStore }
 });

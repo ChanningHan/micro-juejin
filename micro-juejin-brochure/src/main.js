@@ -56,8 +56,6 @@ export async function mount(props) {
   console.log("[vue] props from main framework", props);
   VueRender(props);
 
-  //这里加载完毕后可以改变全局的状态通知主应用让其Loading组件消失
-  setGlobalState({ isLoadingMicro: false });
 }
 
 export async function unmount() {
@@ -65,6 +63,4 @@ export async function unmount() {
   instance = null;
   router = null;
 
-  //这里微应用注销后通知主应用让其Loading组件出现
-  setGlobalState({ isLoadingMicro: true });
 }
