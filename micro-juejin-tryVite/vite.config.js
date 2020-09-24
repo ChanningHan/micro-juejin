@@ -12,5 +12,12 @@ export default  {
             changeOrigin: true,
             rewrite: path => path.replace(/^\/api\/micro-juejin-tryVite/, '/api')
         }
+    },
+    configureServer:   ctx => {
+         ctx.app.use(async (ctx,next) => {
+            ctx.set('Access-Control-Allow-Origin', '*')
+             await next()
+        })
     }
 }
+
