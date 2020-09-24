@@ -1,7 +1,7 @@
 <template>
   <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png" />
-    <HelloWorld msg="Welcome to Your Vue.js App" />
+    <img alt="Vue logo" src="../assets/logo.png"/>
+    <HelloWorld msg="我是被tryVite召唤的主应用组件...."/>
   </div>
 </template>
 
@@ -19,6 +19,7 @@ export default {
   data() {
     return {};
   },
-  beforeMount() {}
+  beforeMount() {
+  }
 };
 </script>

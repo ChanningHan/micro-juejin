@@ -51,6 +51,5 @@ export let setGlobalState;
     };
 })(window);
 
-console.log('hi')
 // console.log(import.meta.env.VITE_SOME_KEY);
 

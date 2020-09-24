@@ -95,6 +95,7 @@
   </a-layout>
 </template>
 <script>
+import Vue from "vue"
 import { mapState } from "vuex";
 import apps from "@/shared/microApps";
 import { debounce, throttle } from "@/shared/util";
@@ -105,6 +106,7 @@ import UserAvatar from "@layouts/BasicLayout/UserAvatar";
 import NavBar from "@layouts/BasicLayout/NavBar";
 import Loading from "@/components/common/Loading";
 import { actions, state } from "@/shared/subRegister";
+import Home from "@views/Home";
 
 export default {
   components: {
@@ -215,6 +217,9 @@ export default {
     actions.onGlobalStateChange(state => {
       console.log("BasicLayout 监听到全局状态变化");
       console.log(state);
+      new Vue(
+          {render: h => h(Home)}
+      ).$mount(state.testAttr.querySelector('#app'))
       this.isLoadingMicro = state.isLoadingMicro;
     });
   }
