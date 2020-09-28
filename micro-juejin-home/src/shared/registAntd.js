@@ -20,14 +20,23 @@ import {
   notification,
   message,
   Skeleton,
-  Icon
+  Icon,
+  // Modal
 } from "ant-design-vue";
 //
 Vue.prototype.$notification = notification;
 Vue.prototype.$message = message;
 
 /*需要注册的组件名字, 注册之前需要确保已经import这个组件*/
-const components = [Button, Empty, notification, message, Skeleton, Icon];
+const components = [
+  Button,
+  Empty,
+  notification,
+  message,
+  Skeleton,
+  Icon,
+  // Modal
+];
 register(components);
 
 function register(components) {

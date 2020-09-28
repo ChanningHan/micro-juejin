@@ -1,5 +1,7 @@
 <template>
   <div class="Home">
+<!--    <a-modal v-model="isShow" title="Basic Modal" ></a-modal>-->
+<!--    <a-button @click="isShow = !isShow">Toggle</a-button>-->
     <HomeMain></HomeMain>
     <HomeSider></HomeSider>
   </div>
@@ -19,6 +21,7 @@ export default {
   data() {
     return {
       // msg: __CHANNING_package_name__
+      // isShow: false
     };
   }
 };

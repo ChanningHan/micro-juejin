@@ -88,7 +88,8 @@ export default function subRegister(vm) {
    * */
   start({
     prefetch: true,
-    sandbox: { strictStyleIsolation: true },
+    // 开启严格模式会造成一些有全局作用的插件或组件异常，比如antd的Modal组件
+    // sandbox: { strictStyleIsolation: true },
     singular: true
   });
 
